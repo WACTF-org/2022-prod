@@ -1,0 +1,24 @@
+
+
+==Description==
+
+The <b>"gwolle_gb_rss_nr_entries"</b> filter is used to change the number of entries shown in the RSS Feed.
+
+You can use this filter as:
+
+<code><?php add_filter( 'gwolle_gb_rss_nr_entries', 'filter_function_name' ) ?></code>
+
+Where 'filter_function_name' is the function WordPress should call when the filter is being used.
+
+'''filter_function_name''' should be a unique function name. It cannot match any other function name already declared.
+
+
+==Examples==
+
+
+function my_gwolle_gb_rss_nr_entries( $number ) {
+	$number = 10;
+	return $number;
+}
+add_filter( 'gwolle_gb_rss_nr_entries', 'my_gwolle_gb_rss_nr_entries', 10, 1 );
+

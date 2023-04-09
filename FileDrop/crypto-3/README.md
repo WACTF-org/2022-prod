@@ -1,0 +1,1 @@
+Challenge moved to [dzflack/ctf-challenges#zippitydoodah](https://github.com/dzflack/ctf-challenges#zippitydoodah)

@@ -1,0 +1,25 @@
+
+
+==Description==
+
+The <b>"gwolle_gb_author_website_label"</b> filter is used to change the text of the label for the input of the author website at the frontend.
+
+You can use this filter as:
+
+<code><?php add_filter( 'gwolle_gb_author_website_label', 'filter_function_name' ) ?></code>
+
+Where 'filter_function_name' is the function WordPress should call when the filter is being used.
+
+'''filter_function_name''' should be a unique function name. It cannot match any other function name already declared.
+
+
+==Examples==
+
+
+function my_gwolle_gb_author_website_label( $label ) {
+	// $label is a string
+	$label = 'test';
+	return $label;
+}
+add_filter( 'gwolle_gb_author_website_label', 'my_gwolle_gb_author_website_label', 10, 1 );
+

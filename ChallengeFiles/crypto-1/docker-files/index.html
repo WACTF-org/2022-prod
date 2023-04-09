@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <script src="aes.js"></script>
+    </head>
+    <body>
+    <!--
+    !!Remove in prod!!
+    Challenge must equal "I1dC27EYHXD+WPkKqms/FbUPnRSlwLf/3xDN302QuDc=" after encryption serverside.
+    -->
+        <script>
+            function decryptRespose() {
+                key = CryptoJS.enc.Utf8.parse("94drthea3lIaDRGA");
+                iv = CryptoJS.enc.Utf8.parse("M0gi9V2dIELP3N9e");
+                console.log(this.responseText);
+                ciphertext = this.responseText;
+
+                var decrypted = CryptoJS.AES.decrypt(ciphertext, key, {
+                    mode: CryptoJS.mode.CBC,
+                    iv: iv,
+                    padding: CryptoJS.pad.Pkcs7
+                })
+                console.log(decrypted.toString(CryptoJS.enc.Utf8));
+                document.getElementById("output").innerHTML = decrypted.toString(CryptoJS.enc.Utf8);
+            }
+        </script>
+        <script>
+            function sendChallenge() {
+                const req = new XMLHttpRequest();
+                req.addEventListener("load", decryptRespose);
+                req.open("POST", "/challenge");
+                req.send(document.getElementById("challenge").value);
+            }
+        </script>
+        <label>Enter Challenge:</label>
+        <input id="challenge" type="password">
+        <button onclick="sendChallenge();">Send Challenge</button>
+        </br>
+        <label>Response: </label>
+        <label id="output"></label>
+    </body>
+</html>

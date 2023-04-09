@@ -1,0 +1,59 @@
+
+
+==Description==
+
+The <b>"gwolle_gb_author_name_html"</b> filter is used to change the html text of the author name in each entry. It can contain the website address or even the email address if desired.
+
+You can use this filter as:
+
+<code><?php add_filter( 'gwolle_gb_author_name_html', 'filter_function_name' ) ?></code>
+
+Where 'filter_function_name' is the function WordPress should call when the filter is being used.
+
+'''filter_function_name''' should be a unique function name. It cannot match any other function name already declared.
+
+
+==Examples==
+
+
+function my_gwolle_gb_author_name_html( $author_name_html ) {
+	// $author_name_html is a string
+
+	$author_name = gwolle_gb_sanitize_output( trim( $entry->get_author_name() ) );
+
+	// Registered User gets italic font-style
+	$author_id = $entry->get_author_id();
+	$is_moderator = gwolle_gb_is_moderator( $author_id );
+	if ( $is_moderator ) {
+		$author_name_html = '<i class="gb-moderator">' . $author_name . '</i>';
+	} else {
+		$author_name_html = $author_name;
+	}
+
+	$author_link_to_buddypress = apply_filters( 'gwolle_gb_author_link_to_buddypress', true );
+	if ( function_exists('bp_core_get_user_domain') && $author_link_to_buddypress ) {
+		// Link to Buddypress profile.
+		$author_website = trim( bp_core_get_user_domain( $author_id ) );
+		if ($author_website) {
+			$author_name_html = '<a href="' . $author_website . '" target="_blank"
+							title="' . /* translators: BuddyPress profile */ esc_attr__( 'Visit the profile of', 'gwolle-gb' ) . ' ' . $author_name . ': ' . $author_website . '">' . $author_name_html . '</a>';
+		}
+	} else if ( get_option('gwolle_gb-linkAuthorWebsite', 'true') === 'true' ) {
+		// Link to author website if set in options.
+		$author_website = trim( $entry->get_author_website() );
+		if ($author_website) {
+			$pattern = '/^http/';
+			if ( ! preg_match($pattern, $author_website, $matches) ) {
+				$author_website = "http://" . $author_website;
+			}
+			$author_link_rel = apply_filters( 'gwolle_gb_author_link_rel', 'nofollow' );
+			$author_name_html = '<a href="' . $author_website . '" target="_blank" rel="' . $author_link_rel . '"
+							title="' . esc_attr__( 'Visit the website of', 'gwolle-gb' ) . ' ' . $author_name . ': ' . $author_website . '">' . $author_name_html . '</a>';
+		}
+	}
+
+	return $author_name_html;
+
+}
+add_filter( 'gwolle_gb_author_name_html', 'my_gwolle_gb_author_name_html', 10, 2 );
+

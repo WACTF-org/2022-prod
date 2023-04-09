@@ -1,0 +1,29 @@
+/*Fixed Sidebar Large Screen Styles*/
+#sfix:not(.d-none) ~ *{
+	margin-left: var(--sfixWidth);
+}
+
+#sfix:not(.d-none) ~ * .header.affix{
+	left: var(--sfixWidth);
+}
+
+#sfix:not(.d-none) ~ * .container{
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+#sfix:not(.d-none) ~ * .container .section-hr,
+#sfix:not(.d-none) ~ * .section-hr.container{
+	left: 20px;
+	right: 20px;
+	width: auto;
+}
+
+#sfix:not(.d-none) ~ * .alignfull{
+	width: calc(100vw - var(--sfixWidth));
+	left: calc(50% + var(--sfixWidth) / 2);
+}
+
+#sfix_toggle{
+	display: none;
+}

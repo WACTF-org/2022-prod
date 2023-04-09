@@ -1,0 +1,6 @@
+mkdir 2.4.5
+cd 2.4.5
+composer require "mercadopago/dx-php:2.4.5"
+then go in vendor/mercadopago/dx-php and delete:
+rm -rf phpDocumentor.phar phpunit.* docs .phpdoc .git* .travis.yml
+

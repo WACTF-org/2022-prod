@@ -1,0 +1,11 @@
+/*to top button type 8*/
+#to-top{
+	border-radius: 8px;
+	background: transparent;
+	border: 3px solid var(--colorMain);
+}
+
+#to-top:before{
+	top: -2px;
+	border-color: var(--colorMain);
+}

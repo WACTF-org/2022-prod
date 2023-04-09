@@ -1,0 +1,33 @@
+/*Fixed Sidebar styles*/
+:root{
+	--sfixWidth: 320px;
+	--sfixPX: 30px;
+}
+
+#sfix{
+	width: var(--sfixWidth);
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	height: 100vh;
+	max-width: 100vw;
+	z-index: 3;
+}
+
+#sfix > div{
+	padding: var(--sfixPX);
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+#sfix.sfix-shadow{
+	box-shadow: 0 0 20px 0 rgba(100, 100, 100, .15);
+}
+
+#sfix.sfix-border{
+	border-right: 1px solid var(--colorBorder);
+}

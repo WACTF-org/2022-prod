@@ -1,0 +1,331 @@
+
+== Changelog ==
+
+= 2.6.7 =
+* 2018-11-07
+* Revert previous jQuery bugfix (incompatible with IE 11).
+* Slightly bigger icons for BBcode menu.
+
+= 2.6.6 =
+* 2018-10-30
+* Only load admin files on wp-admin.
+* Use jQuery to get data from input fields in form.
+
+= 2.6.5 =
+* 2018-09-23
+* Better CSS for Microsoft browsers.
+
+= 2.6.4 =
+* 2018-09-23
+* Add CSS for screen-readers for broken themes.
+
+= 2.6.3 =
+* 2018-09-07
+* Better test if akismet is active.
+* Set timeout check from 7s to 4s.
+* Break email address in entries list as well.
+* Better CSS colors in admin overview.
+* Add support for Dark Mode beta plugin.
+
+= 2.6.2 =
+* 2018-07-19
+* Fix form for "button = false" forms.
+* Don't replace author URL and email with anything (follow WP core 4.9.8).
+
+= 2.6.1 =
+* 2018-07-09
+* Add screen-reader-text to frontend metabox.
+* Hide 'hide this form' button when form was visible on page load.
+* Add a filter for button class 'gwolle_gb_button_class'.
+* Add 'no_email' parameter to 'gwolle_gb_get_entries' function.
+* Add second parameter $entry to filter for mail body notifications.
+* Admin entries page, change label to ID column.
+* Fix compatibility with Add-On version 1.0.0 till 1.1.2.
+* Updates for Add-On 1.2.1.
+
+= 2.6.0 =
+* 2018-06-11
+* Add option to permanently remove IP address and hostname from entries.
+* Add cancel button for the form.
+* Close metabox again after click event.
+* Remove %ip% from default notice text.
+* Add example text to the privacy policy.
+* Refactor link to privacy policy.
+* Included real fix for not handling form data on some installs.
+* Show on editor if author was logged in or not.
+* Add log message to mail notification with writing time like on editor.
+* Add guestbook entries to WordPress personal data exporter.
+* Add guestbook entries to WordPress personal data eraser.
+* Add anonymize option to mass edit.
+* Add 'gwolle_gb_privacy_anonymize_entry' function.
+* Add 'gwolle_gb_get_permalinks' function.
+* Add 'gwolle_gb_get_total_entries' function.
+* Deprecate 'gwolle_gb_addon_get_total_entries' function.
+* Use 'admin_url' everywhere.
+* Updates for Add-On 1.2.0.
+
+= 2.5.4 =
+* 2018-06-06
+* Fix XSS security issue on admin dashboard widget (thanks DefenseCode).
+
+= 2.5.3 =
+* 2018-06-04
+* Better testing if anti-spam functions are enabled when checking the form input.
+* Included possible fix for not handling form data on some installs.
+
+= 2.5.2 =
+* 2018-05-12
+* Support link to privacy policy (requires WordPress 4.9.6).
+
+= 2.5.1 =
+* 2018-05-01
+* Fix link checker.
+* Add default parameter 'book_id' to function 'gwolle_gb_addon_get_total_entries'.
+
+= 2.5.0 =
+* 2018-04-13
+* Improve custom quiz question.
+* Improve and extend Honeypot anti-spam.
+* Add Link Checker for anti-spam.
+* Add timeout for submitting the form for anti-spam.
+* Do not send IP Address to Akismet if disabled.
+* Add 'date_query' parameter to 'gwolle_gb_get_entries' function.
+* Set default settings upon install/upgrade, so we can cache them.
+* Add action 'gwolle_gb_uninstall'.
+* Switch multisite uninstall to 'admin_init' hook.
+* Flush transients from cache if no book_id is set.
+* Switch export to 3000 entries per part instead of 5000.
+* New file '/functions/gb-book_id.php'.
+* Improve comment blocks for functions.
+
+= 2.4.2 =
+* 2018-03-30
+* Close div element correctly.
+
+= 2.4.1 =
+* 2018-03-28
+* Improve features for anti-spam.
+* Add readmore link to admin reply excerpt.
+* More improvements to mobile CSS for the form.
+* Fix warning when sending mail to moderator.
+
+= 2.4.0 =
+* 2018-03-25
+* Add checkbox for privacy policy for GDPR compliance.
+* Add option to store or not store IP Address and hostname.
+* Add export for user based on ID or email.
+* Add search on entries page for user based on ID or email.
+* Support meta fields from the add-on in export/import (needs add-on > 1.1.0 ).
+* Fix CSS for mobile form and form in widget.
+* Remove book_id meta key when only one entry is shown.
+* Fix warning on entries page when no entries.
+* Add function 'gwolle_gb_get_postid_biggest_book'.
+* Add function 'gwolle_gb_get_books'.
+* Add hook 'gwolle_gb_delete_entry' when permanently deleting an entry.
+* Delete log entries in that hook.
+* Use correct URL in RSS feed.
+* Add filters for email body.
+* Fix docs for filters for email subject.
+* Drop support for Shortcake feature plugin.
+* Rephrase Cheating messages like WP Core.
+
+= 2.3.10 =
+* 2018-02-10
+* Small CSS update for login form.
+* Small CSS update for .gb-entry.
+* Small CSS update for Twenty Fifteen.
+* Update strings for add-on 1.0.7.
+
+= 2.3.9 =
+* 2018-01-26
+* Support book_id for export and import (thanks therab).
+
+= 2.3.8 =
+* 2018-01-18
+* Editor.php: Heading for City should really be City.
+* Improve and add translator comments.
+
+= 2.3.7 =
+* 2017-11-29
+* Rename header field in settingsform for compatibility.
+* Improve some text strings (thanks dedotombo).
+* Update strings for add-on 1.0.5.
+
+= 2.3.6 =
+* 2017-11-06
+* Update strings for add-on 1.0.4.
+
+= 2.3.5 =
+* 2017-11-04
+* Add classes with dashes.
+* Small text updates.
+
+= 2.3.4 =
+* 2017-10-19
+* When editing date, show new date after saving the date.
+* Add translations for Add-On to GlotPress of gwolle-gb.
+
+= 2.3.3 =
+* 2017-10-06
+* Use more of esc_html function in translatable strings.
+* Add advertisement page for Add-On.
+
+= 2.3.2 =
+* 2017-09-06
+* Editor: also save when no change was made.
+* Add total counter to frontend list.
+
+= 2.3.1 =
+* 2017-08-29
+* Use correct class for menu-counters.
+
+= 2.3.0 =
+* 2017-08-28
+* Add Stop Forum Spam service for anti-spam.
+* GET parameter entry_id with single view is back (back from the dead).
+* Set admin styling to off by default.
+* Remove "display:inline" for span elements, it is default.
+* Don't use 'strip_tags' anymore.
+* Add Metabox on frontend for more action links.
+* Move Edit link and add Ajax icon to metabox in new file gb-metabox.php.
+* Attach event listener to frontend metabox after posting with AJAX.
+* Add option for Admin Avatar (thanks roots84).
+* Add more filters to frontend form.
+* Add filter 'gwolle_gb_entry_read_add_content_before'.
+* Add filter 'gwolle_gb_entries_list_before'.
+* Add action 'gwolle_gb_notsaved_entry_frontend'.
+* Add filter 'gwolle_gb_get_emoji'.
+* Add function 'gwolle_gb_get_entry_ids'.
+* Add callbacks for infinite scroll and AJAX post.
+* Set border between entries to solid instead of dotted.
+* Fix counters on entries.php page.
+* Admin Editor.php uses less globals now.
+* Use esc_html functions for translatable strings.
+* Store entry total for frontend pagination in a transient.
+* Store counter for admin menu in a transient.
+* Add gwolle_gb_is_author function.
+* Small refactor of AJAX JS code.
+* Move functions for settings, user/author, cache and shortcake to their own files.
+
+= 2.2.1 =
+* 2017-05-24
+* Fix jQuery incompatibility in Super Simple Slider (for widget).
+
+= 2.2.0 =
+* 2017-05-03
+* Add setting to refuse spam entries.
+* Update counter in admin menu and toolbar after check of entry.
+* Add translator comments for Trash (in Trash / to Trash).
+* Add CSS text-color to pagination.
+* Add filter 'gwolle_gb_entries_list_class'.
+* Add filter 'gwolle_gb_entry_class'.
+* Add filter 'gwolle_gb_widget_list_class'.
+* Add filter 'gwolle_gb_widget_item_class'.
+* Add filter 'gwolle_gb_author_link_rel'.
+* Add filter 'gwolle_gb_bbcode_link_rel'.
+* Use wp_kses_post function for sanitizing content and admin_reply.
+* Use sanitize_text_field function for sanitizing other fields.
+* Better testing for 'post_id' in shortcodes.
+* Some better explanations at the Settingspage for anti-spam.
+* Do not concatenate strings, but use sprintf on about page.
+* Move functions for post-meta to own file.
+
+= 2.1.5 =
+* 2017-02-13
+* Add CSS for responsive design for the form.
+* Add CSS for the form inside a .widget and .widget-area.
+* Add class .button to buttons on frontend form.
+* Query for widgets checks on meta field.
+* Make our custom fields protected.
+* Only save custom fields on page edit.
+* Improve error handling on import with missing finfo_open.
+* On entries list, icon column gets header 'Status'.
+* Don't update caches on wp_query.
+* Remove Polish from zipfile, it is maintained in GlotPress.
+
+= 2.1.4 =
+* 2017-01-19
+* Borrow pagination CSS from bbPress.
+* Add shortcode for widget layout: [gwolle_gb_widget].
+* Improve HTML formatting of widget.
+* Remove Italian and Swedish from zipfile, they are at 100% in GlotPress.
+
+= 2.1.3 =
+* 2016-12-24
+* Add rel="nofollow" to website link.
+* Improve HTML formatting of entry.
+* Add filter gwolle_gb_author_link_to_buddypress.
+* Add filters for prefill of the form.
+
+= 2.1.2 =
+* 2016-11-06
+* Wrap text '(no entries yet)' inside the standard div#gwolle_gb_entries so we always list the submitted entry.
+* Add filter for gwolle_gb_admin_reply_header.
+* Long words check shouldn't match http, https or ftp strings.
+* Explain scan for long text better.
+* Again fix for Twenty Sixteen and Twenty Seventeen.
+* On import, run the clear_cache function only once.
+* Slightly improve error handling for admin AJAX.
+
+= 2.1.1 =
+* 2016-09-07
+* Security fix: fix XSS on editor view (Thanks Radjnies of securify.nl).
+* Security fix: fix CSRF on admin pages (Thanks Radjnies of securify.nl).
+* Use str_replace on quotes the right way (no need to escape).
+* Add Nonces to admin pages and check on them.
+* Check the max number of checked entries on bulk edit on admin list.
+* Flush cache on mass delete.
+* Update text of metaboxes on main admin page.
+
+= 2.1.0 =
+* 2016-08-23
+* Fix html validation in form buttons.
+* Add setting for the scan for long text.
+* Set that scan from 80 chars to 100 chars.
+* Support persistent object cache.
+* Flush cache on saving an entry on admin too.
+* Add save-hook to mass edit.
+* Add save-hook to AJAX admin actions.
+* Add save-hook to importer.
+* Load admin CSS on all pages (not JS).
+* Offer MultiSite uninstall through a filter.
+* Set wpdb prefix correctly on uninstall.
+* Rename most files with prefix.
+
+= 2.0.2 =
+* 2016-08-19
+* Fix loading images in CSS.
+* Better AJAX icon.
+* Improve a11y of toolbar menu-item.
+
+= 2.0.1 =
+* 2016-08-16
+* Fix upgrade in MultiSite.
+* More subtle styling of AJAX icon.
+* More consistent naming in error fields.
+* Append Infinite Scroll load message to div#gwolle_gb_entries.
+* Don't use 'focus()' in form ajax, no point to it.
+* Rename CSS and JS files.
+* Rename infinite_scroll.php to ajax-infinite_scroll.php.
+* Rename captcha-ajax.php to ajax-captcha.php.
+* Rename admin/upgrade.php to admin/gwolle-gb-upgrade.php.
+
+= 2.0.0 =
+* 2016-08-08
+* Add AJAX Form Submit (default).
+* Add container div around gwolle_gb_messages div.
+* Small adaptations to form-posthandling.php.
+* Function 'gwolle_gb_clear_cache()' is now hooked to 'gwolle_gb_save_entry_frontend' action.
+* Moderator and author mail are now hooked to 'gwolle_gb_save_entry_frontend' action.
+* Rename frontend/write.php to frontend/form.php.
+* Rename frontend/posthandling.php to frontend/form-posthandling.php.
+* Rename admin/ajax.php to admin/ajax-management.php.
+* Remove more br elements from BBcode lists.
+* Add a 'read more' link to each entry in the widget in the form of a '&raquo;'.
+* Set CSS width of '.input input[type="email"]' and '.input input[type="url"]' to 100%.
+* Set z-index for infinite scroll load message.
+* Make CSS reset for MarkItUp more specific.
+* Add some bootstrap classes to the form.
+* Add comments for translators.
+* Cleanup changelog. Add changelog.txt for v0 and v1.
+

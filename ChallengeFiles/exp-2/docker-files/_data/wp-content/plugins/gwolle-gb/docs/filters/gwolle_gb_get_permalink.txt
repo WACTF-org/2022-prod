@@ -1,0 +1,25 @@
+
+
+==Description==
+
+The <b>"gwolle_gb_get_permalink"</b> filter is used to change the permalink that is used throughout the guestbook. It can be handy with one-page design and a anchor, as it is used in the example below.
+
+You can use this filter as:
+
+<code><?php add_filter( 'gwolle_gb_get_permalink', 'filter_function_name' ) ?></code>
+
+Where 'filter_function_name' is the function WordPress should call when the filter is being used.
+
+'''filter_function_name''' should be a unique function name. It cannot match any other function name already declared.
+
+
+==Examples==
+
+
+function my_gwolle_gb_get_permalink( $permalink ) {
+	// $permalink is a string
+	$permalink .= '#guestbook';
+	return $permalink;
+}
+add_filter( 'gwolle_gb_get_permalink', 'my_gwolle_gb_get_permalink', 10, 1 );
+

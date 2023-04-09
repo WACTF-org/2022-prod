@@ -1,0 +1,18 @@
+.nav-btn span:before,
+.nav-btn span:after{
+	left: -4px;
+	width: 26px;
+}
+
+.nav-btn span:before{
+	bottom: 7px;
+}
+
+.nav-btn span:after{
+	top: 5px;
+}
+
+.nav-btn.type-dots span:before,
+.nav-btn.type-dots span:after{
+	left: 0;
+}

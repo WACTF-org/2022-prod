@@ -1,0 +1,34 @@
+
+
+==Description==
+
+The <b>"gwolle_gb_header_text"</b> filter is used to change the header for the form at the frontend.
+
+You can use this filter as:
+
+<code><?php add_filter( 'gwolle_gb_header_text', 'filter_function_name' ) ?></code>
+
+Where 'filter_function_name' is the function WordPress should call when the filter is being used.
+
+'''filter_function_name''' should be a unique function name. It cannot match any other function name already declared.
+
+
+==Examples==
+
+
+function my_gwolle_gb_header_text( $header_text ) {
+	// $header_text is a string
+
+	// value from the settings page:
+	//$header_text = gwolle_gb_sanitize_output( get_option('gwolle_gb-header', false) );
+
+	// default text if no setting was saved:
+	//$header_text = esc_html__('Write a new entry for the Guestbook', 'gwolle-gb');
+
+	$header_text = 'Write a new message.';
+
+	return $header_text;
+
+}
+add_filter( 'gwolle_gb_header_text', 'my_gwolle_gb_header_text', 10, 1 );
+

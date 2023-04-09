@@ -1,0 +1,24 @@
+
+
+==Description==
+
+The <b>"gwolle_gb_bbcode_img_referrer"</b> filter is used to change the referrerpolicy attribute of BBcode images that were entered by the user.
+
+You can use this filter as:
+
+<code><?php add_filter( 'gwolle_gb_bbcode_img_referrer', 'filter_function_name' ) ?></code>
+
+Where 'filter_function_name' is the function WordPress should call when the filter is being used.
+
+'''filter_function_name''' should be a unique function name. It cannot match any other function name already declared.
+
+
+==Examples==
+
+
+function my_gwolle_gb_bbcode_img_referrer( $referrerpolicy ) {
+	// default "no-referrer"
+	return 'origin'; // Help out tracking bastards.
+}
+add_filter( 'gwolle_gb_bbcode_img_referrer', 'my_gwolle_gb_bbcode_img_referrer' );
+

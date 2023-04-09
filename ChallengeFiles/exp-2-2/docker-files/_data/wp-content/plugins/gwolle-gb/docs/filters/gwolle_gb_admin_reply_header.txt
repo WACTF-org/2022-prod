@@ -1,0 +1,25 @@
+
+
+==Description==
+
+The <b>"gwolle_gb_admin_reply_header"</b> filter is used to change the text of the admin reply header on the frontend and admin editor.
+
+You can use this filter as:
+
+<code><?php add_filter( 'gwolle_gb_admin_reply_header', 'filter_function_name' ) ?></code>
+
+Where 'filter_function_name' is the function WordPress should call when the filter is being used.
+
+'''filter_function_name''' should be a unique function name. It cannot match any other function name already declared.
+
+
+==Examples==
+
+
+function my_gwolle_gb_admin_reply_header( $html, $entry ) {
+	// $html is a string
+	$html = 'test';
+	return $html;
+}
+add_filter( 'gwolle_gb_admin_reply_header', 'my_gwolle_gb_admin_reply_header', 10, 2 );
+

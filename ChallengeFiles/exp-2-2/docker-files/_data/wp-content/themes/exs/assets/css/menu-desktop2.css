@@ -1,0 +1,50 @@
+.top-menu > li > a{
+	line-height: 36px;
+	-webkit-perspective: 1000px;
+	perspective: 1000px;
+	padding: 5px 0;
+}
+
+.top-menu > li > a:before{
+	display: none;
+}
+
+.top-menu > li > a > span{
+	position: relative;
+	display: inline-block;
+	padding: 0 14px;
+	background-color: var(--colorMain);
+	color: #fff;
+	transition: -webkit-transform .3s;
+	transition: transform .3s;
+	transition: transform .3s, -webkit-transform .3s;
+	-webkit-transform-origin: 50% 0;
+	transform-origin: 50% 0;
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
+
+.top-menu > li > a > span:after{
+	position: absolute;
+	text-align: center;
+	top: 100%;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: var(--colorMain2);
+	content: attr(data-hover);
+	-webkit-transform: rotateX(-90deg);
+	transform: rotateX(-90deg);
+	-webkit-transform-origin: 50% 0;
+	transform-origin: 50% 0;
+}
+
+.top-menu > li > a:focus > span,
+.top-menu > li > a:hover > span{
+	-webkit-transform: rotateX(90deg) translateY(-22px);
+	transform: rotateX(90deg) translateY(-22px);
+}
+
+.top-menu > .current-menu-item > a > span{
+	background: var(--colorMain2);
+}

@@ -1,0 +1,119 @@
+[v-cloak],
+.exs-hidden {
+	display: none;
+}
+/*pro sections*/
+	/*panel*/
+#accordion-panel-panel_theme .accordion-section-title:before,
+	/*new*/
+#accordion-section-section_readtime .accordion-section-title:before,
+#accordion-section-section_performance .accordion-section-title:before,
+#accordion-section-section_mouse_cursor .accordion-section-title:before,
+	/*pro*/
+#accordion-section-section_special_categories .accordion-section-title:before,
+#accordion-section-section_skins .accordion-section-title:before,
+#accordion-section-section_exs_woocommerce_products .accordion-section-title:before,
+#accordion-section-section_messages .accordion-section-title:before,
+#accordion-section-section_animation .accordion-section-title:before,
+#accordion-section-section_side_nav .accordion-section-title:before,
+#accordion-section-section_fonts .accordion-section-title:before,
+#accordion-section-section_presets .accordion-section-title:before,
+#accordion-section-section_infinite_loop .accordion-section-title:before,
+#accordion-section-section_share_buttons .accordion-section-title:before,
+#accordion-section-panel_colors_inverse .accordion-section-title:before,
+#accordion-section-section_mailchimp_messages .accordion-section-title:before,
+#accordion-section-panel_bottom_image .accordion-section-title:before {
+	position: absolute;
+	content: 'PRO';
+	right: 44px;
+	top: 12px;
+	color: #fff;
+	background:#007cba;
+	font-size: 11px;
+	padding:0 4px;
+	border-radius: 3px;
+}
+#accordion-panel-panel_theme .accordion-section-title:before,
+#accordion-section-panel_colors_inverse .accordion-section-title:before,
+#accordion-section-panel_bottom_image .accordion-section-title:before {
+	content: 'ExS';
+}
+#accordion-section-section_readtime .accordion-section-title:before,
+#accordion-section-section_performance .accordion-section-title:before,
+#accordion-section-section_mailchimp_messages .accordion-section-title:before,
+#accordion-section-section_mouse_cursor .accordion-section-title:before {
+	content: 'NEW';
+	background: #dd3333;
+}
+
+/*color radio styles*/
+.exs-image-control-wrap,
+.exs-color-control-wrap {
+	position: relative;
+}
+.exs-image-control-wrap input,
+.exs-color-control-wrap input {
+	position: absolute;
+	visibility:hidden;
+}
+.exs-image-radio-label {
+	display:inline-block;
+	border: 2px solid #ccc;
+	line-height: 0;
+}
+.exs-color-label {
+	display:inline-block;
+	width: 40px;
+	height: 40px;
+	margin: 0 0 3px 3px;
+	border: 2px solid #ccc;
+	background: rgb(255,255,255);
+	background: linear-gradient(135deg, rgba(255,255,255,1) 49%, rgba(255,0,0,1) 49%, rgba(255,0,0,1) 51%, rgba(255,255,255,1) 51%);
+}
+.exs-image-control-wrap input:checked+.exs-image-radio-label,
+.exs-image-control-wrap input:focus+.exs-image-radio-label,
+.exs-color-control-wrap input:checked+.exs-color-label,
+.exs-color-control-wrap input:focus+.exs-color-label{
+	border-color: red;
+}
+.exs-color-label.l{
+	background: var(--colorLight);
+}
+.exs-color-label.m{
+	background: var(--colorBackground);
+}
+.exs-color-label.i{
+	background: var(--colorDark);
+}
+.exs-color-label.i.m{
+	background: var(--colorDarkMuted);
+}
+.exs-color-label.i.c{
+	background: var(--colorMain);
+}
+
+.exs-color-label.i.c.c2{
+	background: var(--colorMain2);
+}
+
+.exs-color-label.i.c.c3{
+	background: var(--colorMain3);
+}
+
+.exs-color-label.i.c.c4{
+	background: var(--colorMain4);
+}
+
+.exs-color-label.i.c.gradient{
+	background-image: -webkit-gradient(linear, left bottom, left top, from(var(--colorMain)), to(var(--colorMain2)));
+	background-image: linear-gradient(0deg, var(--colorMain), var(--colorMain2));
+}
+
+.exs-color-label.i.c.gradient.horizontal{
+	background-image: -webkit-gradient(linear, left top, right top, from(var(--colorMain)), to(var(--colorMain2)));
+	background-image: linear-gradient(90deg, var(--colorMain), var(--colorMain2));
+}
+
+.exs-color-label.i.c.gradient.diagonal{
+	background-image: linear-gradient(45deg, var(--colorMain), var(--colorMain2));
+}

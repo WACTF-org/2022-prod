@@ -1,0 +1,28 @@
+.nav-btn span{
+	width: 28px;
+}
+
+.nav-btn span:before,
+.nav-btn span:after{
+	width: 20px;
+}
+
+.nav-btn span:before{
+	bottom: 9px;
+}
+
+.nav-btn span:after{
+	top: 7px;
+}
+
+.nav-btn.active span:before{
+	width: 28px;
+	-webkit-transform: rotate(-135deg);
+	transform: rotate(-135deg);
+}
+
+.nav-btn.active span:after{
+	width: 28px;
+	-webkit-transform: rotate(135deg);
+	transform: rotate(135deg);
+}

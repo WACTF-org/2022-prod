@@ -1,0 +1,29 @@
+/* This CSS file loads only in admin dashboard */
+.ocdi__title ~ #setting-error-tgmpa.notice.settings-error,
+.ocdi__title ~ #setting-error-exs.notice.settings-error,
+.ocdi__title-container ~ .ocdi__content-container #setting-error-tgmpa.notice.settings-error{
+	display: none !important;
+}
+.ocdi__gl-item {
+	border-radius: 9px;
+	overflow: hidden;
+}
+/*fix for reusable blocks preview*/
+.post-type-wp_block .wp-list-table img {
+	max-width: 100%;
+}
+/*fix for 5.5 tools panel in block editor*/
+.interface-interface-skeleton__body .popover-slot{
+	position: absolute;
+}
+/*make overlay when AI demo is imported*/
+.appearance_page_advanced-import.swal2-shown.swal2-toast-shown:before {
+	content:'';
+	position: fixed;
+	top:0;
+	right:0;
+	left:0;
+	bottom:0;
+	background: rgba(0,0,0,.3);
+	z-index: 10;
+}

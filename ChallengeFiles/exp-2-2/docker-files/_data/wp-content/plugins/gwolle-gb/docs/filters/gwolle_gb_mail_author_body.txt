@@ -1,0 +1,41 @@
+
+
+==Description==
+
+The <b>"gwolle_gb_mail_author_body"</b> filter is used to set the body for the notification email to the entry author.
+
+You can use this filter as:
+
+<code><?php add_filter( 'gwolle_gb_mail_author_body', 'filter_function_name' ) ?></code>
+
+Where 'filter_function_name' is the function WordPress should call when the filter is being used.
+
+'''filter_function_name''' should be a unique function name. It cannot match any other function name already declared.
+
+
+==Examples==
+
+
+function my_gwolle_gb_mail_author_body( $body, $entry ) {
+	// this is the default;
+	$body = esc_html__("
+Hello,
+
+You have just posted a new guestbook entry at '%blog_name%'.
+
+Have a nice day.
+The editors at %blog_name%.
+
+
+Website address: %blog_url%
+User name: %user_name%
+User email: %user_email%
+Entry content:
+%entry_content%
+"
+, 'gwolle-gb');
+
+	return $body;
+}
+add_filter( 'gwolle_gb_mail_author_body', 'my_gwolle_gb_mail_author_body', 10, 2 );
+

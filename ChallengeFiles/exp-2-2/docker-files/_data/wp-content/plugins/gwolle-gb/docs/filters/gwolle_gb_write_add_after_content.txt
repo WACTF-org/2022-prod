@@ -1,0 +1,24 @@
+
+
+==Description==
+
+The <b>"gwolle_gb_write_add_after_content"</b> filter is used to add content after the content field of the form at the frontend.
+
+You can use this filter as:
+
+<code><?php add_filter( 'gwolle_gb_write_add_after_content', 'filter_function_name' ) ?></code>
+
+Where 'filter_function_name' is the function WordPress should call when the filter is being used.
+
+'''filter_function_name''' should be a unique function name. It cannot match any other function name already declared.
+
+
+==Examples==
+
+
+function my_gwolle_gb_write_add_after_content( $string ) {
+	$string .= "Filter add after content: " . $entry->get_id();
+	return $string;
+}
+add_filter( 'gwolle_gb_write_add_after_content', 'my_gwolle_gb_write_add_after_content', 10,1 );
+

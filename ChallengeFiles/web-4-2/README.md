@@ -1,0 +1,1 @@
+Challenge moved to [dzflack/ctf-challenges#badifi](https://github.com/dzflack/ctf-challenges#badifi)

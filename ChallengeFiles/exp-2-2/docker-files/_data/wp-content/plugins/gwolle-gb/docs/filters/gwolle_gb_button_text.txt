@@ -1,0 +1,28 @@
+
+
+==Description==
+
+The <b>"gwolle_gb_button_text"</b> filter is used to change the text for the form button at the frontend.
+
+You can use this filter as:
+
+<code><?php add_filter( 'gwolle_gb_button_text', 'filter_function_name' ) ?></code>
+
+Where 'filter_function_name' is the function WordPress should call when the filter is being used.
+
+'''filter_function_name''' should be a unique function name. It cannot match any other function name already declared.
+
+
+==Examples==
+
+
+function my_gwolle_gb_button_text( $button_text ) {
+
+	// $button_text is a string
+	$button_text = esc_attr('Write a new entry.');
+
+	return $button_text;
+
+}
+add_filter( 'gwolle_gb_button_text', 'my_gwolle_gb_button_text', 10, 1 );
+

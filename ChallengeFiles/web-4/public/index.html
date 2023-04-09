@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>GZIP64</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.0/css/bootstrap.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/app.css" />
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <!-- 
+          ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⡠⢤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+          ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡴⠟⠃⠀⠀⠙⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀
+          ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠋⠀⠀⠀⠀⠀⠀⠘⣆⠀⠀⠀⠀⠀⠀⠀⠀
+          ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠾⢛⠒⠀⠀⠀⠀⠀⠀⠀⢸⡆⠀⠀⠀⠀⠀⠀⠀
+          ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣶⣄⡈⠓⢄⠠⡀⠀⠀⠀⣄⣷⠀⠀⠀⠀⠀⠀⠀
+          ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿⣷⠀⠈⠱⡄⠑⣌⠆⠀⠀⡜⢻⠀⠀⠀⠀⠀⠀⠀
+          ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⡿⠳⡆⠐⢿⣆⠈⢿⠀⠀⡇⠘⡆⠀⠀⠀⠀⠀⠀
+          ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢿⣿⣷⡇⠀⠀⠈⢆⠈⠆⢸⠀⠀⢣⠀⠀⠀⠀⠀⠀
+          ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣿⣿⣿⣧⠀⠀⠈⢂⠀⡇⠀⠀⢨⠓⣄⠀⠀⠀⠀
+          ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⣿⣿⣿⣦⣤⠖⡏⡸⠀⣀⡴⠋⠀⠈⠢⡀⠀⠀
+          ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣾⠁⣹⣿⣿⣿⣷⣾⠽⠖⠊⢹⣀⠄⠀⠀⠀⠈⢣⡀
+          ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡟⣇⣰⢫⢻⢉⠉⠀⣿⡆⠀⠀⡸⡏⠀⠀⠀⠀⠀⠀⢇
+          ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢨⡇⡇⠈⢸⢸⢸⠀⠀⡇⡇⠀⠀⠁⠻⡄⡠⠂⠀⠀⠀⠘
+          ⢤⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠛⠓⡇⠀⠸⡆⢸⠀⢠⣿⠀⠀⠀⠀⣰⣿⣵⡆⠀⠀⠀⠀
+          ⠈⢻⣷⣦⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⡿⣦⣀⡇⠀⢧⡇⠀⠀⢺⡟⠀⠀⠀⢰⠉⣰⠟⠊⣠⠂⠀⡸
+          ⠀⠀⢻⣿⣿⣷⣦⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⢧⡙⠺⠿⡇⠀⠘⠇⠀⠀⢸⣧⠀⠀⢠⠃⣾⣌⠉⠩⠭⠍⣉⡇
+          ⠀⠀⠀⠻⣿⣿⣿⣿⣿⣦⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣞⣋⠀⠈⠀⡳⣧⠀⠀⠀⠀⠀⢸⡏⠀⠀⡞⢰⠉⠉⠉⠉⠉⠓⢻⠃
+          ⠀⠀⠀⠀⠹⣿⣿⣿⣿⣿⣿⣷⡄⠀⠀⢀⣀⠠⠤⣤⣤⠤⠞⠓⢠⠈⡆⠀⢣⣸⣾⠆⠀⠀⠀⠀⠀⢀⣀⡼⠁⡿⠈⣉⣉⣒⡒⠢⡼⠀
+          ⠀⠀⠀⠀⠀⠘⣿⣿⣿⣿⣿⣿⣿⣎⣽⣶⣤⡶⢋⣤⠃⣠⡦⢀⡼⢦⣾⡤⠚⣟⣁⣀⣀⣀⣀⠀⣀⣈⣀⣠⣾⣅⠀⠑⠂⠤⠌⣩⡇⠀
+          ⠀⠀⠀⠀⠀⠀⠘⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡁⣺⢁⣞⣉⡴⠟⡀⠀⠀⠀⠁⠸⡅⠀⠈⢷⠈⠏⠙⠀⢹⡛⠀⢉⠀⠀⠀⣀⣀⣼⡇⠀
+          ⠀⠀⠀⠀⠀⠀⠀⠀⠈⠻⣿⣿⣿⣿⣿⣿⣿⣿⣽⣿⡟⢡⠖⣡⡴⠂⣀⣀⣀⣰⣁⣀⣀⣸⠀⠀⠀⠀⠈⠁⠀⠀⠈⠀⣠⠜⠋⣠⠁⠀
+          ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢿⣿⣿⣿⡟⢿⣿⣿⣷⡟⢋⣥⣖⣉⠀⠈⢁⡀⠤⠚⠿⣷⡦⢀⣠⣀⠢⣄⣀⡠⠔⠋⠁⠀⣼⠃⠀⠀
+          ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠻⣿⣿⡄⠈⠻⣿⣿⢿⣛⣩⠤⠒⠉⠁⠀⠀⠀⠀⠀⠉⠒⢤⡀⠉⠁⠀⠀⠀⠀⠀⢀⡿⠀⠀⠀
+          ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⢿⣤⣤⠴⠟⠋⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠑⠤⠀⠀⠀⠀⠀⢩⠇⠀⠀⠀
+          ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+          Hi Developer / Hacker! We're open source! Checkout the code at "/code" 
+      -->
+  </head>
+  <body>
+    <div class="container py-3">
+      <header>
+        <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
+          <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
+            <span class="fs-4">GZIP64 API</span>
+          </a>
+          <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+            <a class="me-3 py-2 text-dark text-decoration-none" href="#">Features</a>
+            <a class="me-3 py-2 text-dark text-decoration-none" href="#">Enterprise</a>
+            <a class="me-3 py-2 text-dark text-decoration-none" href="#">Support</a>
+            <a class="py-2 text-dark text-decoration-none" href="#">Pricing</a>
+          </nav>
+        </div>
+        <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+          <h1 class="display-4 fw-normal">GZIP64 API</h1>
+          <p class="fs-5 text-muted">GZIP64 API is a simple online gzip service!<br />Just submit your token using the "<b>api_token</b>" parameter and your data
+            using the "<b>query</b>" paramater to the<br/>"<a href="/api/v1/compress">/api/v1/compress</a>"endpoint to get your compressed
+            data.</p>
+        </div>
+      </header>
+      <hr /><br />
+      <main>
+        <div class="pricing-header p-3 pb-md-4 mx-auto text-center">We're currently in public beta, but we're planning on releasing special enterprise versions, contact us for more info!</div>
+        <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm">
+              <div class="card-header py-3">
+                <h4 class="my-0 fw-normal">Free</h4>
+              </div>
+              <div class="card-body">
+                <h1 class="card-title pricing-card-title">$0<small class="text-muted fw-light">/mo</small></h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li>One-off ephemeral compression</li>
+                  <li>Max of 1 MB compression</li>
+                  <li>Public uploads</li>
+                  <li>Basic help chat access</li>
+                </ul>
+                <button id="ask-staff" type="button" class="w-100 btn btn-lg btn-outline-primary">Ask our staff!</button>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm">
+              <div class="card-header py-3">
+                <h4 class="my-0 fw-normal">Pro</h4>
+              </div>
+              <div class="card-body">
+                <h1 class="card-title pricing-card-title">$15<small class="text-muted fw-light">/mo</small></h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li>20 users included</li>
+                  <li>10 GB of storage</li>
+                  <li>Priority email support</li>
+                  <li>24/7 help chat access</li>
+                </ul>
+                <button id="ask-staff-2" type="button" class="w-100 btn btn-lg btn-primary">Get started</button>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm border-primary">
+              <div class="card-header py-3 text-white bg-primary border-primary">
+                <h4 class="my-0 fw-normal">Enterprise</h4>
+              </div>
+              <div class="card-body">
+                <h1 class="card-title pricing-card-title">$29<small class="text-muted fw-light">/mo</small></h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li>30 users included</li>
+                  <li>15 GB of storage</li>
+                  <li>Phone and email support</li>
+                  <li>24/7 help chat access</li>
+                </ul>
+                <button id="ask-staff-3" type="button" class="w-100 btn btn-lg btn-primary">Contact us</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <h2 class="display-6 text-center mb-4">Compare plans</h2>
+        <div class="table-responsive">
+          <table class="table text-center">
+            <thead>
+              <tr>
+                <th style="width: 34%;"></th>
+                <th style="width: 22%;">Free</th>
+                <th style="width: 22%;">Pro</th>
+                <th style="width: 22%;">Enterprise</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row" class="text-start">Public</th>
+                <td>🗸</td>
+                <td>🗸</td>
+                <td>🗸</td>
+              </tr>
+              <tr>
+                <th scope="row" class="text-start">Private</th>
+                <td></td>
+                <td>🗸</td>
+                <td>🗸</td>
+              </tr>
+            </tbody>
+            <tbody>
+              <tr>
+                <th scope="row" class="text-start">Permissions</th>
+                <td>🗸</td>
+                <td>🗸</td>
+                <td>🗸</td>
+              </tr>
+              <tr>
+                <th scope="row" class="text-start">Sharing</th>
+                <td></td>
+                <td>🗸</td>
+                <td>🗸</td>
+              </tr>
+              <tr>
+                <th scope="row" class="text-start">Unlimited members</th>
+                <td></td>
+                <td>🗸</td>
+                <td>🗸</td>
+              </tr>
+              <tr>
+                <th scope="row" class="text-start">Extra security</th>
+                <td></td>
+                <td></td>
+                <td>🗸</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </main>
+    </div>
+    <br/>
+    <br/>
+    <br/>
+    <div id="chat" class="container chat-main">
+      <div class="row chat-window col-xs-5 col-md-3 chat-window" id="chat_window_1">
+        <div class="col-xs-12 col-md-12">
+          <div class="panel panel-default">
+            <div class="panel-heading top-bar">
+              <div class="col-md-8 col-xs-8">
+                <h3 class="panel-title"><span class="glyphicon glyphicon-comment"></span>Help Chat</h3>
+              </div>
+              <div class="col-md-4 col-xs-4" style="text-align: right;">
+                <a href="#"><span id="minim_chat_window" class="glyphicon glyphicon-minus icon_minim"></span></a>
+                <a href="#"><span class="glyphicon glyphicon-remove icon_close" data-id="chat_window_1"></span></a>
+              </div>
+            </div>
+            <div id="chat-log" class="panel-body msg_container_base"
+              style="overflow: scroll;overflow-x: scroll;height: 253px;width: 100%;overflow-x: hidden;outline: black;outline-style: none;outline-style: outset;margin-bottom: 10px;margin-top: 5px;">
+
+            </div>
+            <div class="panel-footer">
+              <div class="input-group">
+                <input id="msg-input" type="text" class="form-control input-sm chat_input"
+                  placeholder="Write your message here..." />
+                <span class="input-group-btn">
+                  <button id="btn-input" class="btn btn-primary btn-sm" id="btn-chat" style="height: 37px;">Send</button>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="btn-group dropup">
+      <button id="toggle-chat" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" style="margin: 10px; background-color: white;">
+        <span class="glyphicon glyphicon-cog"></span>
+        <span class="sr-only">Toggle Chat</span>
+      </button>
+      <ul class="dropdown-menu" role="menu">
+        <li><a href="#" id="new_chat"><span class="glyphicon glyphicon-plus"></span></a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-list"></span></a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-remove"></span></a></li>
+        <li class="divider"></li>
+        <li><a href="#"><span class="glyphicon glyphicon-eye-close"></span></a></li>
+      </ul>
+    </div>
+    <script src="/public/cdn/jquery.min.js" integrity="sha256-ExwNgpZ/7QXhkg5Rng6m7JGrl7fEBID3L4r4aAu6Hwo="></script>
+    <script src="/public/cdn/bootstrap.min.js" integrity="sha256-DOneOY3n5+xj6Da3AJBkPHxaPynqSlGaZ9790gbBOsE="></script>
+    <script src="/public/cdn/melonjs.min.js" integrity="sha256-jQSAUrfn72DS8Mj47Mg2K8X21PJDwDC2ogv1H4UH4mU="></script>
+    <script src="/app.js" integrity="sha256-hQoMVJoPumNozrz9N4yjtNKqy5Gpb5ftloLXAQIEhtk="></script>
+  </body>
+</html>

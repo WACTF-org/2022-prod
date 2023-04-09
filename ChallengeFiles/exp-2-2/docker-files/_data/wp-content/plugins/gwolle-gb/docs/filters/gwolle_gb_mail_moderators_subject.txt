@@ -1,0 +1,25 @@
+
+
+==Description==
+
+The <b>"gwolle_gb_mail_moderators_subject"</b> filter is used to set the subject for the moderator notification email.
+
+You can use this filter as:
+
+<code><?php add_filter( 'gwolle_gb_mail_moderators_subject', 'filter_function_name' ) ?></code>
+
+Where 'filter_function_name' is the function WordPress should call when the filter is being used.
+
+'''filter_function_name''' should be a unique function name. It cannot match any other function name already declared.
+
+
+==Examples==
+
+
+function my_gwolle_gb_mail_moderators_subject( $subject ) {
+	// this is the default;
+	$subject = '[' . gwolle_gb_format_values_for_mail(get_bloginfo('name')) . '] ' . esc_html__('New Guestbook Entry', 'gwolle-gb');
+	return $subject;
+}
+add_filter( 'gwolle_gb_mail_moderators_subject', 'my_gwolle_gb_mail_moderators_subject', 10,1 );
+

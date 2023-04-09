@@ -1,0 +1,18 @@
+{
+    "name": "wactf-2022-web",
+    "version": "1.0.0",
+    "description": "WACTF 2022 Web Challenge.",
+    "author": "Harshdeep and Rhys",
+    "main": "server.js",
+    "scripts": {
+      "start": "node server.js"
+    },
+    "dependencies": {
+      "express": "^4.16.1",
+      "ejs": "^3.1.8",
+      "formidable": "^2.0.1",
+      "puppeteer": "^19.2.0",
+      "find-remove": "^4.1.0",
+      "serve-index": "^1.9.1"
+    }
+  }

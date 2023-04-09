@@ -1,0 +1,43 @@
+
+
+==Description==
+
+The <b>"gwolle_gb_mail_author_on_admin_reply_body"</b> filter is used to set the body for the notification email the author gets when an admin_reply has been added.
+
+You can use this filter as:
+
+<code><?php add_filter( 'gwolle_gb_mail_author_on_admin_reply_body', 'filter_function_name' ) ?></code>
+
+Where 'filter_function_name' is the function WordPress should call when the filter is being used.
+
+'''filter_function_name''' should be a unique function name. It cannot match any other function name already declared.
+
+
+==Examples==
+
+
+function my_gwolle_gb_mail_author_on_admin_reply_body( $body, $entry ) {
+	// this is the default;
+	$body = esc_html__("
+Hello,
+
+An admin has just added or changed a reply message to your guestbook entry at '%blog_name%'.
+
+Have a nice day.
+The editors at %blog_name%.
+
+
+Website address: %blog_url%
+Admin Reply:
+%admin_reply%
+
+
+Original entry posted on %date%:
+%entry_content%
+"
+, 'gwolle-gb');
+
+	return $body;
+}
+add_filter( 'gwolle_gb_mail_author_on_admin_reply_body', 'my_gwolle_gb_mail_author_on_admin_reply_body', 10, 2 );
+

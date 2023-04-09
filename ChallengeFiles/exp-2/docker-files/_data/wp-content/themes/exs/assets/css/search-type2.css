@@ -1,0 +1,22 @@
+#search_dropdown{
+	bottom: 0;
+	display: flex;
+}
+
+#search_dropdown.active{
+	background: var(--colorDarkMuted);
+}
+
+#search_dropdown.active + #search_modal_close span:before,
+#search_dropdown.active + #search_modal_close span:after{
+	background: var(--colorLight);
+}
+
+#search_dropdown [type=search]{
+	background: transparent;
+	color: var(--colorLight);
+}
+
+#search_dropdown svg{
+	fill: var(--colorLight);
+}

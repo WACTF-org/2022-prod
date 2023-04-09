@@ -1,0 +1,1 @@
+Challenge moved to [dzflack/ctf-challenges#obfuscatego](https://github.com/dzflack/ctf-challenges#obfuscatego)

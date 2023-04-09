@@ -1,0 +1,27 @@
+
+
+==Description==
+
+The <b>"gwolle_gb_write"</b> filter is used to edit the output of the form at the frontend.
+
+You can use this filter as:
+
+<code><?php add_filter( 'gwolle_gb_write', 'filter_function_name' ) ?></code>
+
+Where 'filter_function_name' is the function WordPress should call when the filter is being used.
+
+'''filter_function_name''' should be a unique function name. It cannot match any other function name already declared.
+
+
+==Examples==
+
+
+function my_gwolle_gb_write( $form_html ) {
+	// $form_html is a string
+	$old = 'Old String';
+	$new = 'New String';
+	$form_html = str_replace( $old, $new, $form_html );
+	return $form_html;
+}
+add_filter( 'gwolle_gb_write', 'my_gwolle_gb_write', 10, 1 );
+

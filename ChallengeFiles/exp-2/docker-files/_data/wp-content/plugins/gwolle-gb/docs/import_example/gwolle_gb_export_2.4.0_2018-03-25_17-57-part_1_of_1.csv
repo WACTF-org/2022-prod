@@ -1,0 +1,3 @@
+id,author_name,author_email,author_origin,author_website,author_ip,author_host,content,datetime,isspam,ischecked,istrash,admin_reply,book_id,meta_fields
+19,You,test@example.com,Zwolle,http://example.com,127.0.0.1,example.com,"Testbericht, verwijder het als je dat wilt. 😄👍👌",1522007830,0,0,1,"Alleen maar een test",1,a:0:{}
+18,You,test@example.com,Zwolle,http://example.com,127.0.0.1,example.com,"Testbericht, verwijder het als je dat wilt.",1522007830,0,0,1,"Alleen maar een test",1,a:0:{}

@@ -1,0 +1,25 @@
+
+
+==Description==
+
+The <b>"gwolle_gb_formdata"</b> filter is used to edit the data that was entered in the form, and will be shown again when there was an error.
+
+You can use this filter as:
+
+<code><?php add_filter( 'gwolle_gb_formdata', 'filter_function_name' ) ?></code>
+
+Where 'filter_function_name' is the function WordPress should call when the filter is being used.
+
+'''filter_function_name''' should be a unique function name. It cannot match any other function name already declared.
+
+
+==Examples==
+
+
+function my_gwolle_gb_formdata( $formdata ) {
+	// $formdata is an array
+	$formdata[] = 'Custom Data';
+	return $formdata;
+}
+add_filter( 'gwolle_gb_formdata', 'my_gwolle_gb_formdata', 10, 1 );
+

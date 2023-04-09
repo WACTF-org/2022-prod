@@ -1,0 +1,89 @@
+/*Inverse Color Scheme styles*/
+#toggle_inverse{
+	position: relative;
+	margin-left: 34px;
+	line-height: 1;
+	display: flex;
+	align-items: center;
+	height: 44px;
+	font-size: 16px;
+	padding: 0 .5em;
+	background: none;
+	border: none;
+	color: var(--colorDark);
+}
+
+#toggle_inverse .svg-icon{
+	padding: 0 .25em;
+}
+
+#toggle_inverse .c-default{
+	display: none;
+}
+
+#toggle_inverse.active .c-default{
+	display: inline;
+}
+
+#toggle_inverse.active .c-inverse{
+	display: none;
+}
+
+#toggle_inverse:before,
+#toggle_inverse:after{
+	content: '';
+	display: inline-block;
+	width: 28px;
+	height: 16px;
+	border-radius: 20px;
+	position: absolute;
+	left: -28px;
+	border: 1px solid var(--colorDark);
+}
+
+#toggle_inverse:after{
+	width: 12px;
+	height: 12px;
+	left: -26px;
+	background: var(--colorDark);
+	transition: left .2s ease;
+}
+
+#toggle_inverse.active:after{
+	left: -14px;
+}
+
+#toggle_inverse.switch-hidden{
+	margin-left: 0;
+}
+
+#toggle_inverse.switch-hidden:before,
+#toggle_inverse.switch-hidden:after{
+	display: none;
+}
+
+.i #toggle_inverse{
+	color: var(--colorLight);
+}
+
+.i #toggle_inverse:before,
+.i #toggle_inverse:after{
+	border-color: var(--colorLight);
+}
+
+.i #toggle_inverse:after{
+	background: var(--colorLight);
+}
+
+.i.c #toggle_inverse{
+	color: #fff;
+}
+
+.i.c #toggle_inverse:before,
+.i.c #toggle_inverse:after{
+	border-color: #fff;
+}
+
+.i.c #toggle_inverse:after{
+	background: #fff;
+}

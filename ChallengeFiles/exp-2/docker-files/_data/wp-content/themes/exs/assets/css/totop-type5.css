@@ -1,0 +1,9 @@
+/*to top button type 5*/
+#to-top{
+	border-radius: 8px;
+	background-color: var(--colorMain);
+}
+
+#to-top:before{
+	border-color: #fff;
+}

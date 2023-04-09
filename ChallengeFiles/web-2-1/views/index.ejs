@@ -1,0 +1,69 @@
+<html>
+  <head>
+    <title>🍪 Cookie Forum 🍪</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:100"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
+    <link href="/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div class="container">
+      <h2>🍪 Cookie Forum 🍪</h2>
+      <br/>
+      <span id="error" style="color: red; display: block; padding-bottom: 16px;"></span>
+
+      <form action="/addpost" method="POST">
+        <textarea
+          class="post-input"
+          name="newpost"
+          placeholder="New recipe here!"
+        ></textarea
+        ><br />
+        <div style="margin-top: 10px; margin-bottom: 30px">
+          <button class="btn btn-primary">Post</button>
+
+          <button
+            class="btn btn-danger"
+            formaction="/clean"
+            style="margin-left: 386px;"
+            type="submit"
+            id="top"
+          >
+            Remove All Posts
+          </button>
+        </div>
+        <hr />
+
+        <h2>Feed</h2>
+        <% if (post.length == 0) { %>
+        <div style="margin-bottom: 20px">No posts.</div>
+        <% } else { %> <% for (var i = 0; i < post.length; i++) { %>
+        <div class="post">
+          <div>Posted: <%= post[i]['time'] %></div>
+          <div><%- post[i]['data'] %></div>
+        </div>
+        <% } %> <% } %>
+      </form>
+    </div>
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      const error = urlParams.get("error");
+      if (error) {
+        document.getElementById("error").innerText = `Whoops! ${error}`;
+      }
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
+      integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

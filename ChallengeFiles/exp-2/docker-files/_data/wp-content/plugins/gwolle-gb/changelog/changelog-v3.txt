@@ -1,0 +1,90 @@
+
+== Changelog ==
+
+= 3.1.9 =
+* 2020-02-01
+* Fix undefined variable notice (thanks ronr1999).
+* Add 'float:none;' to frontend button.
+
+= 3.1.8 =
+* 2020-01-21
+* Add highlight to search results (thanks @robinnatter).
+* Add searchwords to search widget after searching.
+* Do not set meta_key when shortcode is used in widget or one-page design.
+* Show InnoDB engine on debug tab.
+* Show existence of database tables on debug tab.
+
+= 3.1.7 =
+* 2019-10-25
+* Show subscription status for email notifications on settings page.
+* Comment out unused images in markitup CSS.
+* Set rel='nofollow noopener noreferrer' for bbcode links and user website.
+* Set referrerpolicy='no-referrer' for bbcode images and avatar.
+* Add filter 'gwolle_gb_bbcode_img_referrer'.
+* Update strings for add-on.
+
+= 3.1.6 =
+* 2019-08-21
+* Use wp_kses for filtering html elements.
+* Add support for quotes already in the bbcode link.
+
+= 3.1.5 =
+* 2019-06-08
+* Add log entry for privacy policy accepted (gets added to notification mail).
+* Add msg_txt key/value to log entries for plain text display.
+* Small updates to install routine.
+* Support new wp_initialize_site action for multisite.
+
+= 3.1.4 =
+* 2019-05-03
+* Make it possible to set entry to moderated with the gwolle_gb_new_entry_frontend filter.
+* Update strings for add-on.
+
+= 3.1.3 =
+* 2019-04-16
+* Small fix for silly mistake.
+
+= 3.1.2 =
+* 2019-04-04
+* Improve accessibility for the frontend metabox.
+* Add filter gwolle_gb_new_entry_frontend.
+* Add filter gwolle_gb_get_permalink.
+* Change arrows in next/prev pagination.
+* Auto-detect line endings in import from CSV.
+
+= 3.1.1 =
+* 2019-03-08
+* Drop check for mime-type on import, too many problems.
+* Small CSS fix for pagination.
+
+= 3.1.0 =
+* 2019-02-19
+* Remove support for Really Simple Captcha plugin, since it is ineffective.
+* Please take a look at the other options for spamfilters, there are more and better options.
+* Update CSS for admin navigation for WP 5.1.
+* Add screen-reader-text to navigation for frontend and admin.
+* Small fixes found by the phan tool.
+
+= 3.0.0 =
+* 2019-01-22
+* Add search widget (only visible on guestbook pages).
+* Add '[noscript]' to frontend form for when JavaScript is disabled.
+* Add function 'gwolle_gb_post_is_guestbook'.
+* Add function 'gwolle_gb_get_entries_from_search'.
+* Add function 'gwolle_gb_enqueue_markitup'.
+* Fix BBcode: support images inside links.
+* Fix BBcode: have sublists work.
+* Show new username and book ID after editing in editor postbox.
+* Add some accessibility fixes.
+* Switch database engine to InnoDB.
+* Don't use transients for hashed field names, is faster this way.
+* Better test if admin user exists for admin_reply.
+* Use 'field-name' for gwolle_gb_content too.
+* On admin pages, have separate functions for $_POST update. (settings, editor, entries).
+* Use GWOLLE_GB_URL where appropriate.
+* Use static vars instead of global vars.
+* Integrate 2 JavaScript files for Markitup/BBcode.
+* Switch export to 2000 entries per part instead of 3000.
+* Add strings for add-on 1.3.0.
+* Cleanup changelog. Add changelog-v2.txt.
+

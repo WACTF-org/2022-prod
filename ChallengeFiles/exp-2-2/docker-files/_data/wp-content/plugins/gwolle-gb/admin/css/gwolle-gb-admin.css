@@ -1,0 +1,421 @@
+
+/*
+ * CSS for the admin part of Gwolle GB Guestbook.
+ */
+
+
+.gwolle-gb {
+	clear: both;
+}
+
+.gwolle-gb-hide {
+	display: none;
+}
+
+/* Menu Icon */
+#icon-gwolle-gb {
+	background-image: url('../images/icon-45x45.png');
+	background-repeat: no-repeat;
+	margin: 0 10px;
+	float: left;
+	width: 45px;
+	height: 42px;
+}
+
+#gwolle_gb_entries .subsubsub,
+h2.gwolle-nav-tab-wrapper {
+	clear: left;
+}
+
+
+/*
+ * Welcome page
+ */
+
+.gwolle_gb_welcome {
+	clear: left;
+}
+body #dashboard-widgets .postbox#gwolle_gb_notification form p.submit {
+	margin: 1em 0;
+}
+body #dashboard-widgets .postbox#gwolle_gb_notification ul {
+	font-size: 84%;
+	font-style: italic;
+	list-style-type: disc;
+	padding-left: 14px;
+}
+.gwolle-gb-overview td {
+	padding: 2px 6px;
+}
+#wpbody .gwolle-gb-overview tr.gwolle-gb-overview-all td.colored {
+	color: #0000f0;
+}
+#wpbody .gwolle-gb-overview tr.gwolle-gb-overview-checked td.colored {
+	color: #008000;;
+}
+#wpbody .gwolle-gb-overview tr.gwolle-gb-overview-unchecked td.colored {
+	color: #ff6f00;;
+}
+#wpbody .gwolle-gb-overview tr.gwolle-gb-overview-spam td.colored {
+	color: #FF0000;;
+}
+#wpbody .gwolle-gb-overview tr.gwolle-gb-overview-trash td.colored {
+	color: #FF0000;;
+}
+/* Dark Mode */
+.dark-mode #wpbody .gwolle-gb-overview tr.gwolle-gb-overview-all td.colored {
+	color: #3030ff;
+}
+
+
+/*
+ * Editor.php
+ */
+
+#gwolle_gb_editor #normal-sortables .postbox input[type="text"],
+#gwolle_gb_editor #normal-sortables .postbox input[type="url"],
+#gwolle_gb_editor #normal-sortables .postbox textarea {
+	width: 100%;
+	max-width: 500px;
+	clear: both;
+}
+#gwolle_gb_editor .postbox textarea {
+	display: block;
+}
+
+.gwolle_gb_emoji,
+.gwolle_gb_admin_reply_emoji {
+	width: 100%;
+	max-width: 500px;
+	clear: both;
+}
+
+#gwolle_gb_editor .postbox #gwolle_gb_frontend {
+	margin-bottom: 1em;
+}
+#gwolle_gb_editor .postbox #publishing-action {
+	margin-top: 1em;
+}
+
+#gwolle_gb_editor .gwolle_gb_editor_meta_inputs {
+	display: none;
+}
+
+/* Editor Log */
+#gwolle_gb_editor #gwolle_gb_editor_postbox_logs {
+	max-height: 400px;
+	overflow: auto;
+}
+
+/* Preview */
+#gwolle_gb_editor_postbox_preview .gb-entry.gb-entry-count_0 {
+	border-width: 0px;
+}
+#gwolle_gb_editor_postbox_preview .gb-metabox {
+	border-top: 1px #ddd solid;
+}
+
+
+/*
+ * Entries.php
+ */
+
+/* Page Navigation */
+.gwolle_gb .tablenav .tablenav-pages a {
+	display: inline;
+	padding: 4px 6px 4px;
+	margin-left: 4px;
+}
+.gwolle_gb .tablenav .tablenav-pages span.current {
+	display: inline;
+	padding: 4px 6px 4px;
+	margin-left: 4px;
+	border: 1px solid #ccc;
+	font-size: 16px;
+	line-height: 1;
+}
+.gwolle_gb .tablenav .tablenav-pages span.dots {
+	margin-left: 4px;
+}
+
+/* Table */
+#gwolle_gb_entries th {
+	white-space: nowrap;
+}
+#gwolle_gb_entries th,
+#gwolle_gb_entries td {
+	box-shadow: inset 0 -1px 0 #0000001a;
+}
+
+/* Dark Mode */
+.dark-mode #gwolle_gb_entries th,
+.dark-mode #gwolle_gb_entries td {
+	box-shadow: inset 0 -1px 0 #32373c;
+}
+
+.gwolle_gb .id,
+.gwolle_gb .check {
+	min-width: 12px;
+}
+.gwolle_gb .entry-date,
+.gwolle_gb .entry-author-name {
+	min-width: 92px;
+}
+.gwolle_gb td.entry-author-name {
+	word-break: break-all;
+	word-break: break-word;
+}
+.gwolle_gb td.entry-content {
+	word-break: break-all;
+	word-wrap: break-word;
+}
+
+.gwolle_gb .entry-checked,
+.gwolle_gb .entry-unchecked,
+.gwolle_gb .entry-loading {
+	background-repeat: no-repeat;
+	background-position: 0px 6px;
+	width: 10px;
+	cursor: move;
+}
+
+/* Admin entry */
+.gwolle_gb #gwolle_gb_entries .admin-entry {
+	color: #333;
+	background-color: #e6e6e6;
+	background-repeat: repeat-x;
+	background-image: linear-gradient(top, #f4f4f4, #e6e6e6);
+}
+/* Dark Mode */
+.dark-mode .gwolle_gb #gwolle_gb_entries .admin-entry {
+	border: 1px solid #191f25;
+	background-color: #32373c;
+	color: #bbc8dd;
+}
+
+/* Entries actions */
+td.gwolle_gb_actions {
+	min-width: 130px;
+}
+
+span.book-icon a {
+	padding: 0 10px; /* Make it clickable */
+}
+
+
+/*
+ * Icons on entries.php and editor.php
+ */
+
+.gwolle_gb td.entry-icons {
+	min-width: 50px;
+}
+.gwolle_gb .visible-icon,
+.gwolle_gb .invisible-icon,
+.gwolle_gb .spam-icon,
+.gwolle_gb .trash-icon,
+.gwolle_gb .entry-icons .gwolle_gb_ajax {
+	display: none;
+	width: 16px;
+	height: 16px;
+	margin-right: 5px;
+}
+.gwolle_gb .visible .visible-icon {
+	display: inline-block;
+	background-image: url('../images/entry-checked.png');
+}
+.gwolle_gb .invisible .invisible-icon {
+	display: inline-block;
+	background-image: url('../images/entry-unchecked.png');
+}
+.gwolle_gb .spam .spam-icon {
+	display: inline-block;
+	background-image: url('../images/entry-spam.png');
+}
+.gwolle_gb .trash .trash-icon {
+	display: inline-block;
+	background-image: url('../images/entry-trash.png');
+}
+.gwolle_gb .admin_reply-icon {
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	margin-right: 5px;
+	background-image: url('../images/entry-admin-reply.png');
+}
+
+/* AJAX */
+.gwolle_gb .entry-icons .gwolle_gb_ajax {
+	background-image: url('../images/loading.gif'); /* Small icon for entries list */
+}
+
+.gwolle_gb tr.entry td span {
+	vertical-align: middle;
+}
+
+/* Overwrite CSS rules from other plugins */
+.gwolle_gb .invisible {
+	visibility: visible !important;
+}
+
+
+/*
+ * Settings page
+ */
+
+/* Tabs */
+form.gwolle_gb_options {
+	display: none;
+}
+form.gwolle_gb_options.active {
+	display: block;
+}
+
+
+/* Forms tab */
+.gwolle_gb_options th.narrow,
+.gwolle_gb_options td.narrow {
+	width: 100px;
+}
+
+.gwolle_gb_options .form-table td {
+	vertical-align: top;
+}
+
+/*
+ * Dashboard Widget
+ */
+
+#gwolle_gb_dashboard .inside {
+	margin-top: 4px;
+}
+#gwolle_gb_dashboard .comment {
+	padding-top: 3px;
+}
+#gwolle_gb_dashboard .date {
+	font-size: 82%;
+}
+#gwolle_gb_dashboard blockquote.excerpt {
+	margin: 0;
+}
+#gwolle_gb_dashboard .excerpt p {
+	margin: 4px 0;
+}
+
+#gwolle_gb_dashboard p.row-actions {
+	margin: 0;
+	padding-bottom: 4px;
+}
+
+#gwolle_gb_dashboard .admin-entry {
+	color: #333;
+	background-color: #e6e6e6;
+	background-repeat: repeat-x;
+	background-image: -moz-linear-gradient(top, #f4f4f4, #e6e6e6);
+	background-image: -ms-linear-gradient(top, #f4f4f4, #e6e6e6);
+	background-image: -webkit-linear-gradient(top, #f4f4f4, #e6e6e6);
+	background-image: -o-linear-gradient(top, #f4f4f4, #e6e6e6);
+	background-image: linear-gradient(top, #f4f4f4, #e6e6e6);
+}
+
+
+/*
+ * AJAX on Entries Page and on Dashboard Widget
+ */
+
+span.gwolle_gb_check,
+span.gwolle_gb_uncheck,
+span.gwolle_gb_spam,
+span.gwolle_gb_unspam,
+span.gwolle_gb_trash,
+span.gwolle_gb_untrash,
+span.gwolle_gb_ajax {
+	display: none;
+}
+.unchecked span.gwolle_gb_check {
+	display: inline;
+}
+.checked span.gwolle_gb_uncheck {
+	display: inline;
+}
+.nospam span.gwolle_gb_spam {
+	display: inline;
+}
+.spam span.gwolle_gb_unspam {
+	display: inline;
+}
+.notrash span.gwolle_gb_trash {
+	display: inline;
+}
+.trash span.gwolle_gb_untrash {
+	display: inline;
+}
+
+/*
+ * Admin Bar
+ * Remember, the icon gets only loaded on our own admin pages...
+ */
+
+#wpadminbar #wp-admin-bar-gwolle-gb .ab-icon::before {
+	content: "";
+	top: 3px;
+}
+
+
+/*
+ * Export page
+ */
+
+#gwolle_gb_export .gwolle_gb_export_gif_container {
+	position: relative;
+}
+#gwolle_gb_export .gwolle_gb_export_gif {
+	display: inline-block;
+	visibility: hidden;
+	background-image: url("../../frontend/images/loading.gif"); /* Big icon like the frontend */
+	background-repeat: no-repeat;
+	width: 32px;
+	height: 32px;
+	line-height: 32px;
+	position: absolute;
+	bottom: 0;
+	left: 150px;
+}
+
+
+/*
+ * Add-On admin page
+ */
+
+#gwolle-gb-addon-screenshot {
+	background-image: url("../images/screenshot-entry-with-metabox-open.png");
+	width: 100%;
+	height: 240px;
+	background-size: cover;
+}
+
+
+/*
+ * Add-On
+ */
+
+form.gwolle_gb_options.gwolle_gb_social img {
+	margin-bottom: -8px;
+}
+form.gwolle_gb_options.gwolle_gb_strings td {
+	padding-left: 0px;
+}
+
+.gb-form-top-add-new,
+.gb-form-name-add-new,
+.gb-form-city-add-new,
+.gb-form-email-add-new,
+.gb-form-website-add-new,
+.gb-form-message-add-new,
+.gb-string-add-new {
+	cursor: pointer;
+}
+
+span.gwolle-gb-report-abuse-positive a {
+	cursor: pointer;
+}

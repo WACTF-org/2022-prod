@@ -1,0 +1,27 @@
+
+
+==Description==
+
+The <b>"gwolle_gb_widget"</b> filter is used to edit the output for the widget at the frontend.
+
+You can use this filter as:
+
+<code><?php add_filter( 'gwolle_gb_widget', 'filter_function_name' ) ?></code>
+
+Where 'filter_function_name' is the function WordPress should call when the filter is being used.
+
+'''filter_function_name''' should be a unique function name. It cannot match any other function name already declared.
+
+
+==Examples==
+
+
+function my_gwolle_gb_widget( $widget_html ) {
+	// $widget_html is a string
+	$old = 'Old String';
+	$new = 'New String';
+	$widget_html = str_replace( $old, $new, $widget_html );
+	return $widget_html;
+}
+add_filter( 'gwolle_gb_widget', 'my_gwolle_gb_widget', 10, 1 );
+

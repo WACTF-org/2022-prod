@@ -1,0 +1,91 @@
+/*AMP styles*/
+.header.always-sticky{
+	position: fixed;
+}
+
+#header.header-tall.always-sticky:not(.affix) .logo{
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+#to-top{
+	bottom: 0 !important;
+}
+
+@-webkit-keyframes ampFadeOut {
+	0%{
+		opacity: 1;
+		width: 100%;
+		height: 100%;
+	}
+
+	100%{
+		opacity: 0;
+		width: 100%;
+		height: 100%;
+	}
+}
+
+@keyframes ampFadeOut {
+	0%{
+		opacity: 1;
+		width: 100%;
+		height: 100%;
+	}
+
+	100%{
+		opacity: 0;
+		width: 100%;
+		height: 100%;
+	}
+}
+
+@-webkit-keyframes ampFadeIn {
+	0%{
+		opacity: 0;
+	}
+
+	100%{
+		opacity: 1;
+	}
+}
+
+@keyframes ampFadeIn {
+	0%{
+		opacity: 0;
+	}
+
+	100%{
+		opacity: 1;
+	}
+}
+
+.preloader{
+	width: 0;
+	height: 0;
+	opacity: 0;
+	pointer-events: none;
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-name: ampFadeOut;
+	animation-name: ampFadeOut;
+}
+
+#box.box-fade-in{
+	opacity: 1;
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-name: ampFadeIn;
+	animation-name: ampFadeIn;
+}
+
+.animation-enabled .animate,
+[data-animate*=".column-aside .widget"] .column-aside .widget,
+[data-animate*=".footer-widgets .widget"] .footer-widgets .widget,
+[data-animate*=".hfeed article.post"].hfeed .post{
+	visibility: visible;
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-name: ampFadeIn;
+	animation-name: ampFadeIn;
+}

@@ -1,0 +1,40 @@
+body {
+  background: rgb(255, 184, 117);
+  color: #1a1a1a;
+  margin-top: 20px;
+}
+
+.container {
+  display: block;
+  width: 80%;
+  margin: 0 auto;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+.post {
+  padding: 8px;
+  outline: rgb(61, 32, 0);
+  outline-style: groove;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #1a1a1a;
+  background: rgb(255, 221, 176);
+  border-radius: 8px;
+}
+
+.post-input {
+  width: 600px;
+  height: 100px;
+}
+
+textarea {
+  padding: 6px;
+  color: #1a1a1a;
+  background: rgb(255, 221, 176);
+  border-radius: 8px;
+  margin-bottom: 16px;
+}

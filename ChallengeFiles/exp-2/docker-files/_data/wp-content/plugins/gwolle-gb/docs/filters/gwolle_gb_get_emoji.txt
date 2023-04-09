@@ -1,0 +1,33 @@
+
+
+==Description==
+
+The <b>"gwolle_gb_get_emoji"</b> filter is used to change the list of emoji shown on textarea/bbcode/emoji at the frontend form.
+
+You can use this filter as:
+
+<code><?php add_filter( 'gwolle_gb_get_emoji', 'filter_function_name' ) ?></code>
+
+Where 'filter_function_name' is the function WordPress should call when the filter is being used.
+
+'''filter_function_name''' should be a unique function name. It cannot match any other function name already declared.
+
+
+==Examples==
+
+
+function my_gwolle_gb_get_emoji( $emoji ) {
+	// $emoji is a string.
+
+	// Add a character.
+	$emoji .= '<a title="✌️" class="gwolle_gb_emoji_50 noslimstat">✌️</a>';
+
+	// Replace a character.
+	$old = '<a title="🏝" class="gwolle_gb_emoji_65 noslimstat">🏝</a>g';
+	$new = '<a title="✌️" class="gwolle_gb_emoji_50 noslimstat">✌️</a>';
+	$emoji = str_replace( $old, $new, $emoji );
+
+	return $emoji;
+}
+add_filter( 'gwolle_gb_get_emoji', 'my_gwolle_gb_get_emoji', 10, 1 );
+

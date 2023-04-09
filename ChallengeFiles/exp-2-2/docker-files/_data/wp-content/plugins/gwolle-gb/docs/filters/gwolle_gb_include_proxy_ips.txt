@@ -1,0 +1,26 @@
+
+
+==Description==
+
+The <b>"gwolle_gb_include_proxy_ips"</b> filter is used to use the real client IP instead of the ip from the CDN or proxy.
+
+You can use this filter as:
+
+<code><?php add_filter( 'gwolle_gb_include_proxy_ips', 'filter_function_name' ) ?></code>
+
+Where 'filter_function_name' is the function WordPress should call when the filter is being used.
+
+'''filter_function_name''' should be a unique function name. It cannot match any other function name already declared.
+
+
+==Examples==
+
+
+function my_gwolle_gb_include_proxy_ips( $include_proxy_ip ) {
+	// $include_proxy_ip is a boolean
+	$include_proxy_ip = true;
+
+	return $include_proxy_ip;
+}
+add_filter( 'gwolle_gb_include_proxy_ips', 'my_gwolle_gb_include_proxy_ips', 10, 2 );
+

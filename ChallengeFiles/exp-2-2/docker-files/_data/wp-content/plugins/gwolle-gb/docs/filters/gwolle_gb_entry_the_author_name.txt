@@ -1,0 +1,27 @@
+
+
+==Description==
+
+The <b>"gwolle_gb_entry_the_author_name"</b> filter is used to filter the author name of each entry at the frontend.
+
+You can use this filter as:
+
+<code><?php add_filter( 'gwolle_gb_entry_the_author_name', 'filter_function_name' ) ?></code>
+
+Where 'filter_function_name' is the function WordPress should call when the filter is being used.
+
+'''filter_function_name''' should be a unique function name. It cannot match any other function name already declared.
+
+
+==Examples==
+
+
+function my_gwolle_gb_entry_the_author_name($string, $entry) {
+	// $string is a string
+	$old = 'Old String';
+	$new = 'New String';
+	$string = str_replace( $old, $new, $string );
+	return $string;
+}
+add_filter( 'gwolle_gb_entry_the_author_name', 'my_gwolle_gb_entry_the_author_name', 10, 2 );
+

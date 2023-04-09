@@ -1,0 +1,31 @@
+
+
+==Description==
+
+The <b>"gwolle_gb_new_entry_frontend"</b> filter is used to check the entry before saving it to the database from the frontend form.
+
+You can use this filter as:
+
+<code><?php add_filter( 'gwolle_gb_new_entry_frontend', 'filter_function_name' ) ?></code>
+
+Where 'filter_function_name' is the function WordPress should call when the filter is being used.
+
+'''filter_function_name''' should be a unique function name. It cannot match any other function name already declared.
+
+
+==Examples==
+
+
+function my_gwolle_gb_new_entry_frontend( $entry ) {
+	// $entry is an instance of the gwolle_gb_entry class.
+
+	// Non-fatal error message.
+	gwolle_gb_add_message( '<p class="gb-my-special-error"><strong>' . esc_html__('This is an extra error message that is non-fatal. The entry will still get saved.', 'gwolle-gb') . '</strong></p>', false, false);
+
+	// Fatal error message.
+	gwolle_gb_add_message( '<p class="gb-my-special-error"><strong>' . esc_html__('This is an extra error message that is fatal. The entry was not saved.', 'gwolle-gb') . '</strong></p>', true, false);
+
+	return $entry;
+}
+add_filter( 'gwolle_gb_new_entry_frontend', 'my_gwolle_gb_new_entry_frontend');
+

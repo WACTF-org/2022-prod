@@ -1,0 +1,146 @@
+input.submit {
+    cursor: pointer;
+    width: 100%;
+    position: relative;
+    height: 25px;
+    background-color: #2E68C5;
+    border-radius: 4px;
+    color: #fff;
+}
+.submit:hover {
+     background-color: #9B9D9E;
+     color: #fff;
+}
+#overlay {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: #000;
+filter:alpha(opacity=70);
+-moz-opacity:0.7;
+-khtml-opacity: 0.7;
+opacity: 0.7;
+z-index: 100;
+display: none;
+}
+.popup_box a{
+text-decoration: none;
+}
+.popup{
+width: 100%;
+margin: 0 auto;
+display: none;
+position: fixed;
+z-index: 101;
+}
+.captcha_form{
+width: 250px;
+margin: auto;
+}
+.popup_box{
+min-width: 300px;
+width: 300px;
+min-height: 150px;
+margin: 100px auto;
+background: #f3f3f3;
+position: relative;
+z-index: 103;
+padding: 10px;
+border-radius: 5px;
+box-shadow: 0 2px 5px #000;
+}
+.popup_box p{
+    font-size: 17px;
+clear: both;
+color: #555555;
+text-align: center;
+}
+.popup_box p a{
+color: #d91900;
+font-weight: bold;
+}
+.popup_box .x{
+float: right;
+position: relative;
+top: -14px;
+right: -3px;
+width: 9px;
+}
+.popup_box .x:hover{
+cursor: pointer;
+}
+.captcha{
+	width:150px;
+	margin:0px 0px -6% 25%;
+}
+.admin_menu{
+border-radius: 4px;
+-moz-border-radius: 4px;
+-webkit-border-radius: 4px;
+background: #E1E4DE;
+color: #444;
+font-size: 14px;
+height: auto;
+margin: 30px 15px 15px 0px;
+overflow: hidden; 
+padding: 4px 10px 6px;
+line-height: 30px;
+}
+.row1 {
+height: 51px;
+width: 430px;
+}
+.row2 {
+height: 51px;
+width: 430px;
+}
+.row3 {
+height: 51px;
+width: 430px;
+}
+.row4 {
+width: 430px;
+}
+.row5 {
+width: 430px;
+}
+input.attempts {
+    float: right;
+}
+ 
+
+input.delay {
+    float: right;
+}
+
+input.submit_admin{
+    cursor: pointer;
+    width: 100%;
+    position: relative;
+    height: 25px;
+    background-color: #2E68C5;
+    border-radius: 4px;
+    color: #fff;
+    margin: 5px 0;
+    -webkit-border-bottom-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    -webkit-border-bottom-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border: none;
+}
+.submit_admin:hover{
+    background-color: #444;
+}
+.warn_msg{
+    background: #FFFFE0;
+    border: 1px solid #E6DB55;
+    padding: 5px 5px 5px 10px;
+    text-align: left;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    margin: 5px 15px 5px 0;
+    width: auto;
+}

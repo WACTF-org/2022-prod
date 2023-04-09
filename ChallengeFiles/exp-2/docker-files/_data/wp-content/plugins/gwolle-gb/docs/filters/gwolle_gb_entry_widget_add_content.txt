@@ -1,0 +1,24 @@
+
+
+==Description==
+
+The <b>"gwolle_gb_entry_widget_add_content"</b> filter is used to add content to each entry in the widget at the frontend.
+
+You can use this filter as:
+
+<code><?php add_filter( 'gwolle_gb_entry_widget_add_content', 'filter_function_name' ) ?></code>
+
+Where 'filter_function_name' is the function WordPress should call when the filter is being used.
+
+'''filter_function_name''' should be a unique function name. It cannot match any other function name already declared.
+
+
+==Examples==
+
+
+function my_gwolle_gb_entry_widget_add_content($string, $entry) {
+	$string .= "Filter add content: " . $entry->get_id();
+	return $string;
+}
+add_filter( 'gwolle_gb_entry_widget_add_content', 'my_gwolle_gb_entry_widget_add_content', 10, 2 );
+

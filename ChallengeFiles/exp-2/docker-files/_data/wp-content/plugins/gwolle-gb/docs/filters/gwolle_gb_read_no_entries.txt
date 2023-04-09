@@ -1,0 +1,25 @@
+
+
+==Description==
+
+The <b>"gwolle_gb_read_no_entries"</b> filter is used to change the text for when there are no entries, at the frontend.
+
+You can use this filter as:
+
+<code><?php add_filter( 'gwolle_gb_read_no_entries', 'filter_function_name' ) ?></code>
+
+Where 'filter_function_name' is the function WordPress should call when the filter is being used.
+
+'''filter_function_name''' should be a unique function name. It cannot match any other function name already declared.
+
+
+==Examples==
+
+
+function my_gwolle_gb_read_no_entries( $entry_html ) {
+	// $entry_html is a string
+	$entry_html = '(no entries yet)';
+	return $entry_html;
+}
+add_filter( 'gwolle_gb_read_no_entries', 'my_gwolle_gb_read_no_entries', 10, 1 );
+

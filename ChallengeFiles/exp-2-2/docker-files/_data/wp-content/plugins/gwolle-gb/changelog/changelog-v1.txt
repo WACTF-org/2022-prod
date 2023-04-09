@@ -1,0 +1,665 @@
+
+== Changelog of Gwolle Guestbook Version 1.0 - 1.7.4 ==
+
+= 1.7.4 =
+* 2016-06-27
+* Improve CSS of Widget Slider.
+* BBcode: don't have br elements in the ul and ol.
+* Uninstall is not supported on MultiSite.
+* Fix PHP error after uninstall.
+* Redirect to dashboard after uninstall.
+* Small tuning of numbers for the importer.
+* Fix event listener for export submit.
+* Split export files with max 5000 entries.
+
+= 1.7.3 =
+* 2016-06-24
+* Add slider as an option to the Widget.
+* Add book ID as an option to the Widget.
+* Add Super Simple Slider for that widget slider.
+* Add filters for email subjects.
+* Add filter for number of entries shown.
+* Add filter for wpadmin_url in notification mail.
+* Make label for submit button invisible in CSS.
+
+= 1.7.2 =
+* 2016-05-17
+* Fix Emoji at the frontend.
+* Also use role of Author for possible moderators.
+
+= 1.7.1 =
+* 2016-05-15
+* Change encoding of Emoji, hopefully this fixes it for people still having problems.
+* Set RSS Feed to 20 entries by default and add filter for this.
+* Show admin-reply author on editor.
+* Fix Emoji on Editor adminpage.
+* Add rel="next" and rel="prev" to pagination.
+* Simplify checking the array of user_ids in gwolle_gb_notification() with in_array().
+* Use role__in for WP_User_Query for list of moderators.
+* Add filter for role__in to add custom roles.
+* Fix warning when posting an entry and moderation is on.
+* Add docs for actions and filters.
+* Add example CSV file for import.
+
+= 1.7.0 =
+* 2016-04-26
+* Update formatting and fix Emoji on old servers.
+* Also show main charset and column charset on debug page for MySQL.
+* Only update table to utf8mb4 if main charset is utf8mb4.
+* Call wp_cache_flush() as well when clearing cache.
+* Set the correct HTTP header for Content-type for the RSS Feed.
+* Update Donate text.
+
+= 1.6.9 =
+* 2016-04-12
+* Add option on Settings page for disabling Nonce.
+* Use 'date at time' instead of 'date on time'. Follow WP Comments.
+* Fix counter on Infinite Scroll.
+* Improve usability of permanently removing an entry on admin editor.
+* Cleanup text in Help postbox on main admin page.
+* Use proper permalink for Widget and Editor.
+* Use proper metaboxes on admin pages for Export, Import and Editor.
+* Only enqueue on our own admin pages.
+* Use rss2 as feed_content_type for RSS feed.
+* Remove duplicate code for IP recording in class-entry.
+* Move functions for compatibility to compatibility.php.
+
+= 1.6.8 =
+* 2016-03-23
+* Add icon for trash entry.
+* Change menu-name for New entry to Add/Edit entry.
+* Use _n function for singular/plural text strings.
+* Add proper permalink to notification mails.
+* Set maximum number of pages for Widget Form (500).
+* Set maximum number of posts/pages to import from (500).
+* Don't fetch meta_key and termdata from those posts.
+* Add filter gwolle_gb_set_author_ip for disabling IP recording.
+
+= 1.6.7 =
+* 2016-03-14
+* Still fixing formatting glitches.
+* Fix typo in notice text, and polish it up.
+* Add option for reading max 3 entries.
+* Admin editor: make it possible to not save a website field.
+* Small polish for pagination on page 5.
+* Different spinner/loading gif for Infinite Scroll.
+* Use toggle animation for loading gif.
+* Position absolute for the loading gif.
+
+= 1.6.6 =
+* 2016-03-10
+* Add Infinite Scroll (optional, as alternative to pagination).
+* Fix "Showing 1 – 25 of 54" on admin list.
+* Fix leftover pagination issues on admin list.
+* Use pagination from admin also for frontend.
+* Self-documenting variable names for pagination functions.
+* Remove Akismet message on Spam list in admin.
+* Simplify counting the offset for db-query.
+* Split formatting functions off into formatting.php file.
+* Translate debug headings.
+
+= 1.6.5 =
+* 2016-03-05
+* Do not make slashes into html entities (for bbcode).
+
+= 1.6.4 =
+* 2016-03-05
+* Add debug tab on Settings page.
+* Make sure we don't strip backslashes.
+* Add entry_content and date to admin reply email.
+* Drop fi, zh_TW, they are at 100% in GlotPress.
+
+= 1.6.3 =
+* 2016-02-23
+* Add filter for "no_entries".
+* Add filters to change the labels.
+* Add filter for sql query in get_entries().
+* Add log messages to moderator mail.
+* Explicitly set utf8mb4 character set for $wpdb (for misconfigured hosts).
+* Add mysql/mysqli to debug info.
+
+= 1.6.2 =
+* 2016-02-12
+* Change a lot of Emoji.
+* Make CSS for BBcode menu more specific.
+* Twenty Sixteen is awful.
+* Add actions/hooks after saving an entry.
+* Add link to RSS feed on main admin page.
+* Add gwolle_gb_debug_info function for debugging.
+
+= 1.6.1 =
+* 2016-02-06
+* Use HTML5 for required fields.
+* Add Nonce for verification.
+* Add option to shortcode gwolle_gb_write to only show button or form.
+* Make CSS for .gwolle_gb_hide more specific.
+* Disable Slimstat tracking for Emoji.
+* Use wp-exclude-emoji class for textarea and input fields.
+* On install, only write option for version on successfull install.
+* No need for color:red on empty excerpt.
+
+= 1.6.0 =
+* 2016-01-22
+* Change name and id of honeypot input field.
+* Add logging for too long text in entry.
+* Add entry_id as parameter to url in RSS Feed.
+* Drop ru_RU, it is at 100% in GlotPress.
+
+= 1.5.9 =
+* 2016-01-15
+* Add Honeypot feature (enabled by default).
+* Show moderation message on spam for the "user".
+* Add logging for when it was marked by the Honeypot and Akismet.
+* Fix compatibility with Twentysixteen a elements.
+* Fix smileys when content is trimmed.
+* Exchange a few Emoji characters.
+* Change text on Settingspage for Akismet, add explanation.
+
+= 1.5.8 =
+* 2015-12-31
+* Add readmore link when entries are trimmed.
+* Fix Emoji for admin_reply.
+* Use slideDown effect for Emoji.
+* Show error on frontend when saving failed.
+* Improve filtered messages for 'gwolle_gb_messages'.
+* Test for duplicate entry checks only the same book_id.
+* Add filter for frontend button.
+* Add $entry to filter gwolle_gb_author_name_html.
+
+= 1.5.7 =
+* 2015-12-01
+* Fix for inline CSS.
+* Make Book_id column in Admin Entries clickable.
+* Remove installSplash.
+* Add shortcode as parameter to main frontend functions.
+* Rename frontend/index.php to frontend/shortcodes.php.
+
+= 1.5.6 =
+* 2015-11-29
+* Add functions for errors, messages and formdata, so we use less global vars.
+* Add filters for these functions.
+* Add filter for author_name_html.
+* Add author_origin to possible email fields.
+* Add Reply-To header to admin email.
+* Save book_id in Meta_key.
+* If possible, link to the correct guestbook/book_id.
+* Update headings for WordPress 4.4.
+* Small styling fixes for main admin page.
+* If BuddyPress is active, link author to its profile page.
+* Drop fr_FR, it is maintained at GlotPress.
+
+= 1.5.5 =
+* 2015-11-03
+* Fix for import on PHP 5.2 installs that do have finfo_open().
+* Add book_id="post_id" as optional parameter in the shortcode.
+* Add datetime to title in RSS-feed.
+* Drop pot, de_DE and nl_NL, they are at 100% on GlotPress.
+
+= 1.5.4 =
+* 2015-10-16
+* Security fix: Use AJAX the proper way for CAPTCHA check (thanks htbridge.ch).
+* Translations moved to GlotPress.
+* Support Shortcode UI.
+* Properly enqueue frontend JavaScript.
+* Use plugins_url() for admin enqueue.
+* Don't use WP_PLUGIN_URL and GWOLLE_GB_URL anymore.
+
+= 1.5.3 =
+* 2015-10-01
+* When email is disabled, save it anyway when user is logged in.
+* Add nb_NO (thanks Bjørn Inge Vårvik).
+* Update ru_RU.
+
+= 1.5.2 =
+* 2015-09-15
+* First stab at supporting MultiSite.
+* When deleting an entry on the Editor page, start with a clean slate.
+* On Entries page, give Book ID its own column.
+* Do not cache page when using a Captcha.
+* Admin Enqueue moved to its own function and action.
+* Only toggle our own postboxes.
+* Update pot, nl_NL, zh_TW.
+
+= 1.5.1 =
+* 2015-09-14
+* Support Multiple Guestbooks.
+* Add book_id field to database and class-entry, default is book_id 1.
+* Add parameter book_id to shortcodes.
+* Add parameter book_id to get_entries and get_entry_count functions.
+* Show and Edit book_id on Admin Editor.
+* Add icons for book_id and admin_reply, add title attributes.
+* Don't show so much metadata on unpublished entry.
+* Fix link to entry in moderation mail.
+* Add notice for using CAPTCHA with a caching plugin.
+* No need to add options on install, we have defaults for that.
+* Rename install/upgrade functions.
+* Test if db tables exist, before adding them.
+* Update pot, nl_NL, ru_RU.
+
+= 1.5.0 =
+* 2015-09-10
+* Only support WordPress 3.7+, since they really are supported.
+* Add option for widget to not show admin entries.
+* When saving an entry, reset author_id and checkedby for non-existent users.
+* Add action for deleted_user to reset author_id (and maybe checkedby).
+* Add parameter author_id to gwolle_gb_get_entries function.
+* Add parameter no_moderators to gwolle_gb_get_entries function.
+* Add function gwolle_gb_get_moderators.
+* Update pot, nl_NL, ru_RU.
+
+= 1.4.9 =
+* 2015-09-09
+* Add HTML5 Markup.
+* Use content_url() for the Captcha (thanks harald.reingruber).
+* Rename class and function files to WP standards.
+* Move mail functions to own file.
+* Add permalink of guestbook to mails.
+* Add mail to author on Admin Reply with option on editor page.
+* Translate BBcode icontext with wp_localize_script.
+* Add Emoji to Admin Editor.
+* Add number of unchecked entries to admin bar, if > 0.
+* Change text-domain to slug.
+* Update pot, de_DE, nl_NL.
+
+= 1.4.8 =
+* 2015-08-27
+* Add Admin Reply.
+* Update Importer and Exporter.
+* Add filters to entry-list and to widget.
+* Add parameter $entry to many filters.
+* Add CSS class for counter in entry-list.
+* Add filters to the form.
+* Turn linebreaks off in Settings when excerpt_length is being used.
+* Update pot, de_DE, nl_NL.
+
+= 1.4.7 =
+* 2015-08-14
+* Fix adding an entry without CAPTCHA enabled.
+* Make header and notice compatible with Multi-Lingual plugins.
+* Add parameter to template function gwolle_gb_entry_template.
+* Add CSS class for even/uneven entry.
+* Have better usability in handling disabled submit buttons on admin pages.
+* Have sensible attributes for submit-button on settings page.
+* Move pagination to own files and functions.
+* Use h1 headings on admin pages.
+
+= 1.4.6 =
+* 2015-08-12
+* Improve Responsive Layout of Admin Pages.
+* Add option to paginate All entries.
+* Clear Cache plugins on admin changes as well.
+* Support Cachify, W3 Total Cache, WP Fastest Cache.
+* Improve support for WP Super Cache.
+* Refactor BBcode and Emoji functions into own file.
+* Add function gwolle_gb_get_emoji.
+* Improve html of author_name.
+* Update pot, nl_NL.
+
+= 1.4.5 =
+* 2015-08-10
+* Drop reCAPTCHA completely.
+* Use Really Simple CAPTCHA plugin from now on.
+* Rename from Gwolle-GB to Gwolle Guestbook.
+* Add function gwolle_gb_bbcode_strip.
+* Strip BBcode from Widget and Dashboard Widget.
+* Strip BBcode from Entry when BBcode is disabled.
+* Strip BBcode for Akismet service request.
+* Fix link in Widget for WPML.
+* Add placeholder to textarea, also in admin editor.
+* Fix PHP notice in AJAX request.
+* Add word-break and word-wrap to admin CSS.
+* Add Greek, el (thanks dbonovas).
+* Update pot, nl_NL.
+
+= 1.4.4 =
+* 2015-07-29
+* Fix textdomain on Donate string.
+* Use 'strong' for bold in bbcode.
+* Update meta_key on save_post action.
+* Update pot, de_DE, ru_RU, zh_TW.
+
+= 1.4.3 =
+* 2015-07-17
+* Upgrade reCAPTCHA to 1.1.1 (Requires PHP 5.3+).
+* DB: drop column 'date'.
+* Improve html of new editor options.
+* Update pot, nl_NL.
+
+= 1.4.2 =
+* 2015-07-13
+* Fix quotes in subjectline and From-header of emails.
+* Translate description of the plugin too.
+* Set CSS for span to display:inline.
+* Check for array when getting settings.
+* DB: Move date to datetime with bigint(8), so sorting on date works correctly.
+* Mark $entry->get_date and $entry->set_date as deprecated.
+* Rename actions.php to hooks.php.
+* Add function gwolle_gb_get_postid.
+* Add button for frontend to some adminpages.
+* Improve and update Admin CSS for WP 4.3.
+* Add function gwolle_gb_touch_time.
+* Edit author_name and datetime on editor.php.
+* Don't spam the logs when editing an entry.
+* Update pot, nl_NL.
+
+= 1.4.1 =
+* 2015-06-17
+* Add author_ip to possible fields in notification mail.
+* Use Gwolle version for enqueue of Markitup css and js.
+* Add a bit of reset-CSS to Markitup CSS so themes are less conflicting.
+* Show author name as it was put in by the author, not from the user profile.
+* Add da_DK (thanks Bo Fischer Nielsen).
+
+= 1.4.0 =
+* 2015-06-14
+* Add template for single entry.
+* Fix quoting issues in notification email.
+* Fix sending headers in write.php.
+* Set scoped attribute for more CSS.
+* Set language for RSS Feed.
+
+= 1.3.9 =
+* 2015-06-13
+* Fix for WP 3.4, which has no function has_shortcode.
+* Change 'at' time to 'on'.
+* Update pot and affected translations.
+
+= 1.3.8 =
+* 2015-06-10
+* Add RSS Feed.
+* Set scoped properly.
+* Update pot, nl_NL, ru_RU.
+
+= 1.3.7 =
+* 2015-06-04
+* Add Emoji to form.
+* Add action to frontend form for validation.
+* Add scoped attribute to style element.
+* Switch place of metaboxes on main admin page.
+* Add sv_SE (Swedish) (thanks Roffe Bentsen).
+* Update pt_BR.
+
+= 1.3.6 =
+* 2015-05-31
+* Close span element in widget (thanks Ferdinand).
+* Redo Donate metabox, add Review text.
+* Add pt_BR (Thanks Alexandre Rocha).
+* Update pot, nl_NL and ru_RU.
+
+= 1.3.5 =
+* 2015-05-19
+* Support BBcode in editor.
+* Improve Emoji support, for name, city and content.
+* Fix posting an entry on old WP installs.
+* Update bg_BG, nl_NL, pot.
+
+= 1.3.4 =
+* 2015-05-15
+* Update the cache when using cache plugins.
+* Support WP Super Cache.
+* Convert our database tables to utf8mb4 if possible, so Emoji are functional.
+* Also support (encode) Emoji on old db-collation.
+* Frontend: Only listen to clicks on the button, not the whole div.
+* Update ru_RU.
+
+= 1.3.3 =
+* 2015-05-08
+* Only check for double entry if the content is mandatory.
+* Only offer to export when there are entries.
+* When login required, show login form.
+* Also show the register link then.
+* Update ru_RU.
+
+= 1.3.2 =
+* 2015-04-20
+* PageNum is always an int.
+* Add sk_SK (Slovenian) (Thanks Marcel Klacan).
+
+= 1.3.1 =
+* 2015-04-08
+* Explain interaction between limiting words and linebreaks.
+* Make notices (messages) dismissible in WP 4.2.
+* Import from post, or just all comments.
+* Only show pages and posts with comments on import page.
+* Use get_comments everywhere, also for counting, for consistency.
+* Really sanitize everywhere.
+* Use htmlspecialchars instead of htmlentities.
+* Use esc_attr_e for attributes.
+* Add it_IT (thanks Mariachiara Corradini).
+* Update pot, nl_NL.
+
+= 1.3.0 =
+* 2015-04-02
+* Place div around list of entries.
+* Update bg_BG, fr_FR.
+
+= 1.2.9 =
+* 2015-03-28
+* Sanitize output for notification email.
+* Remove "hours" from the entries list. Nobody likes it.
+* Update bg_BG, ru_RU.
+
+= 1.2.8 =
+* 2015-03-25
+* Do show the form when user is logged in and login is required.
+* Widget uses get_home_url for the pagelink.
+* Update bg_BG (Thanks Kostadin Petrichkov).
+* Add missing es_ES.po from mo-file.
+
+= 1.2.7 =
+* 2015-03-24
+* Add options for admins to (un)subscribe moderators to notifications.
+* Add buttons to empty spam and trash.
+* Add options to change text around the form.
+* Separate settingspage into more files.
+* Use more sanitizing for output.
+* Add stub for bg_BG.
+* Update pot, nl_NL.
+
+= 1.2.6 =
+* 2015-03-22
+* Extend notification email.
+* Add options for mail to the author.
+* Really disable dashboard widget with too few capabilities.
+* Update pot, nl_NL, ru_RU.
+
+= 1.2.5 =
+* 2015-03-21
+* Check for abusive length of words, and mark unchecked.
+* Compatibility with PHP 5.3 and Unicode.
+* Use get_object_vars for casting to an array for the save filter.
+* Don't set background-color on error-messages.
+* Update ru_RU.
+
+= 1.2.4 =
+* 2015-03-18
+* Add option for max words in content.
+* Add ru_RU (thanks zhonglyor).
+* Update pl_PL.
+* Update fr_FR (Thanks Florence Bourmault-Gohin).
+
+= 1.2.3 =
+* 2015-03-17
+* Add options for widget (changed defaults).
+* CSS frontend uses % instead of px for width.
+* Update pl_PL (Thanks Andrzej Sobaniec).
+* Update fi (Thanks Timo Hintsa).
+
+= 1.2.2 =
+* 2015-03-13
+* Import, check for timestamp on date, else convert.
+* Add option to have labels float or not.
+* Add option to enable/disable admin entry styling.
+* Use maybe_unserialize.
+* Add filters to the API.
+* Update pot and nl_NL.
+
+= 1.2.1 =
+* 2015-03-10
+* Frontend entries: class s/first/gwolle_gb_first.
+* Rename fi_FI to fi, so it loads.
+* Update pot, de_DE and nl_NL.
+
+= 1.2.0 =
+* 2015-03-08
+* Add shortcodes for just the form and the list.
+* Add option to only allow logged-in users to post an entry.
+* Add options to configure the shown entries.
+* Import: fix test for mimetype.
+* Import supports PHP 5.2.
+* s/Homepage/Website.
+* Update pot, de_DE, nl_NL.
+
+= 1.1.9 =
+* 2015-02-16
+* Validate URL for Website as well, even though most url's validate.
+* Sanitize Formdata.
+* Sanitize Settings.
+* Update de_DE.
+
+= 1.1.8 =
+* 2015-02-14
+* Move anti-spam question to the label on the left.
+* Add better error messages to the form.
+* Add autofocus to first formfield with an error.
+* Use validation for the email.
+* Add visibility:visible for tr.invisible.
+* Add pt_PT (Only frontend yet).
+
+= 1.1.7 =
+* 2015-02-13
+* Settingspage; make it possible to remove anti-spam and reCAPTCHA settings.
+* All strings really use our text-domain.
+* Update de_DE.
+
+= 1.1.6 =
+* 2015-02-10
+* Fix CSS for check-all checkbox on entrylist in admin.
+* Better CSS for admin entries, grey instead of pink.
+* Also style admin entries on admin pages.
+* Always load jQuery, it's just easier.
+* All strings use our text-domain.
+
+= 1.1.5 =
+* 2015-02-09
+* Fix js when jQuery is loaded in the footer.
+* Fix error submitting new entries.
+* Do pagination link a bit cheaper.
+* Add fi_FI (thanks Ilkka Kivelä).
+
+= 1.1.4 =
+* 2015-02-03
+* Fix pagination links.
+* Slightly improve installsplash. Maybe it just needs to go alltogether.
+* Update zh_TW.
+
+= 1.1.3 =
+* 2015-02-01
+* Add a simple Form Builder.
+* Add custom Anti-Spam question.
+* Add CSS for the widget.
+* Fix default MailText.
+* Cleanup old options.
+
+= 1.1.2 =
+* 2015-01-31
+* Settingspage uses Tabs.
+* Settingspage uses more labels.
+* Uninstall is back.
+* Give the CSS file a version in the GET.
+* Put date and time in spans on frontend.
+* Only show paginaton on frontend when there is more then 1 page.
+* Add Donate link.
+* Don't count arrays when not needed.
+* Use strpos instead of preg_match.
+* Use sprintf for formatting instead of str_replace.
+* Update pot-file, fr_FR, nl_NL, zh_TW.
+
+= 1.1.1 =
+* 2015-01-10
+* Add Edit link to frontend for moderators.
+* Work around old and incompatible other recaptcha libraries.
+* Get_entries function supports limit of -1 (no limit).
+* Import from WordPress comments.
+* Export/Import from/to Gwolle-GB through a CSV file.
+* Add zh_TW (Thanks Chun-I Lee).
+* Remove unmaintained en_GB.
+
+= 1.1.0 =
+* 2015-01-06
+* Admin entries page: fix table header and footer (ordering).
+* Auto-fill the form if the user is already logged in.
+* Bring Ajax to the editor page as well.
+* Simplify Options on editor page.
+
+= 1.0.9 =
+* 2015-01-05
+* Fix small but nasty error, sorry about that.
+* More specific HTML / CSS on Frontend.
+
+= 1.0.8 =
+* 2015-01-04
+* Ajax is back on Dashboard Widget and on Entries page.
+* Move notification option to main page so moderators can subscribe.
+* New option for the From address in notification mail.
+* Small fixes and cleanups.
+* Update de_DE and nl_NL.
+
+= 1.0.7 =
+* 2014-12-27
+* Update de_DE (Thanks Jenny Gaulke).
+
+= 1.0.6 =
+* 2014-12-24
+* Change database structure for guestbook entries.
+* Fix install for db and log entries.
+* Use '...' instead of '& hellip;'.
+
+= 1.0.5 =
+* 2014-12-21
+* Add best entries to Frontend Widget.
+* Start of the Dashboard Widget (for now without AJAX).
+* Fix small pagination issue.
+* Cleanup obsolete options.
+* Class entry; integrate setters and checkers, it's all the same.
+* gwolle_gb_entries: entry_id is not a parameter anymore.
+* Change database structure for log entries.
+* Small cleanups.
+* Update pot, nl_NL and cs_CZ.
+
+= 1.0.4 =
+* 2014-12-16
+* Bring back Import from DMSGuestbook.
+* Postboxes can be closed now.
+* Be more gentle on the database.
+* Add cs_CZ (Thanks Jan Korous).
+
+= 1.0.3 =
+* 2014-12-14
+* Add delete function in editor and mass-edit.
+* Fix pagination on Frontend.
+* Frontend Widget is back.
+* Excerpt is now counted in words and uses wp_trim_words.
+* Updates for pot, nl_NL and fr_FR.
+
+= 1.0.2 =
+* 2014-12-13
+* HTML uses labels now.
+* HTML has more classes.
+* New generated pot file. Please send in your translations.
+* Update for nl_NL.
+* Update for fr_FR (Thanks Charles-Aurélien)
+
+= 1.0.1 =
+* 2014-12-05
+* Frontend uses now input-button for the write link.
+* Frontend checks again for double post.
+* Main admin page also shows trashed entries.
+* Settings page now saves Recaptcha setting.
+* reCAPTCHA is back.
+
+= 1.0 =
+* 2014-11-28
+* Release stable and updated version 1.0 to the public.
+* Go on holiday, have a few beers, and watch the girls do the hoolahoop().
+

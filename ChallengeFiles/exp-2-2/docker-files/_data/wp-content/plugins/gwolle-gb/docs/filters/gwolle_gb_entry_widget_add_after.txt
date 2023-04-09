@@ -1,0 +1,24 @@
+
+
+==Description==
+
+The <b>"gwolle_gb_entry_widget_add_after"</b> filter is used to add content after each entry in the widget in the frontend.
+
+You can use this filter as:
+
+<code><?php add_filter( 'gwolle_gb_entry_widget_add_after', 'filter_function_name' ) ?></code>
+
+Where 'filter_function_name' is the function WordPress should call when the filter is being used.
+
+'''filter_function_name''' should be a unique function name. It cannot match any other function name already declared.
+
+
+==Examples==
+
+
+function my_gwolle_gb_entry_widget_add_after($string, $entry) {
+	$string .= "Filter add after: " . $entry->get_id();
+	return $string;
+}
+add_filter( 'gwolle_gb_entry_widget_add_after', 'my_gwolle_gb_entry_widget_add_after', 10, 2 );
+

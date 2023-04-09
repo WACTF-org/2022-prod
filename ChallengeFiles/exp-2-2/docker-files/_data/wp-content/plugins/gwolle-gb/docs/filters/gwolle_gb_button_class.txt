@@ -1,0 +1,25 @@
+
+
+==Description==
+
+The <b>"gwolle_gb_button_class"</b> filter is used to change the class attribute of buttons in the frontend form.
+
+You can use this filter as:
+
+<code><?php add_filter( 'gwolle_gb_button_class', 'filter_function_name' ) ?></code>
+
+Where 'filter_function_name' is the function WordPress should call when the filter is being used.
+
+'''filter_function_name''' should be a unique function name. It cannot match any other function name already declared.
+
+
+==Examples==
+
+
+function my_gwolle_gb_button_class( $classes ) {
+	// $classes is a string
+	$classes .= ' grid-item'; // Add to it or use str_replace. Mind the space.
+	return $classes;
+}
+add_filter( 'gwolle_gb_button_class', 'my_gwolle_gb_button_class', 10, 1 );
+

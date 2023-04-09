@@ -1,0 +1,25 @@
+
+
+==Description==
+
+The <b>"gwolle_gb_author_link_to_buddypress"</b> filter is used to not link to the BuddyPress profile of the user,
+but to link to the website address that was entered by the user.
+
+You can use this filter as:
+
+<code><?php add_filter( 'gwolle_gb_author_link_to_buddypress', 'filter_function_name' ) ?></code>
+
+Where 'filter_function_name' is the function WordPress should call when the filter is being used.
+
+'''filter_function_name''' should be a unique function name. It cannot match any other function name already declared.
+
+
+==Examples==
+
+
+function my_gwolle_gb_author_link_to_buddypress( $link_to_buddypress ) {
+	// Do not link to buddypress, but to entered website address.
+	return false;
+}
+add_filter( 'gwolle_gb_author_link_to_buddypress', 'my_gwolle_gb_author_link_to_buddypress' );
+

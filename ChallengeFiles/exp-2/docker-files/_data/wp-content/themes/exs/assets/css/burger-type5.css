@@ -1,0 +1,35 @@
+.nav-btn span,
+.nav-btn span:before,
+.nav-btn span:after{
+	height: 1px;
+	width: 26px;
+}
+
+.nav-btn span:before{
+	bottom: 9px;
+}
+
+.nav-btn span:after{
+	top: 8px;
+}
+
+.nav-btn.active span:before{
+	-webkit-transform: rotate(-135deg);
+	transform: rotate(-135deg);
+}
+
+.nav-btn.active span:after{
+	-webkit-transform: rotate(135deg);
+	transform: rotate(135deg);
+}
+
+.nav-btn.type-dots.active span,
+.nav-btn.type-dots.active span:before,
+.nav-btn.type-dots.active span:after{
+	width: 25px;
+	height: 1px;
+}
+
+.nav-btn.type-dots.active span:after{
+	top: 0;
+}

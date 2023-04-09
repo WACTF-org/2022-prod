@@ -1,0 +1,32 @@
+
+
+==Description==
+
+The <b>"gwolle_gb_entry_metabox_lines"</b> filter is used to add "lines" to the metabox that hovers topright in each entry in the frontend. By default there is only an "Edit" link inside for moderators.
+
+You can use this filter as:
+
+<code><?php add_filter( 'gwolle_gb_entry_metabox_lines', 'filter_function_name' ) ?></code>
+
+Where 'filter_function_name' is the function WordPress should call when the filter is being used.
+
+'''filter_function_name''' should be a unique function name. It cannot match any other function name already declared.
+
+Make sure you wrap your "line" inside a div with the gb-metabox-line class, like in the example below.
+
+==Examples==
+
+
+/*
+ * Edit Link for Moderators
+ */
+function my_gwolle_gb_entry_metabox_lines_edit_link( $gb_metabox, $entry ) {
+	if ( current_user_can('moderate_comments') ) {
+		$gb_metabox .= '
+					<div class="gb-metabox-line">
+						<a class="gwolle_gb_edit_link" href="' . admin_url('admin.php?page=' . GWOLLE_GB_FOLDER . '/editor.php&amp;entry_id=' . $entry->get_id() ) . '" title="' . esc_html__('Edit entry', 'gwolle-gb') . '">' . esc_html__('Edit', 'gwolle-gb') . '</a>
+					</div>';
+	}
+	return $gb_metabox;
+}
+add_filter( 'gwolle_gb_entry_metabox_lines', 'my_gwolle_gb_entry_metabox_lines_edit_link', 90, 2 );

@@ -1,0 +1,33 @@
+.nav-btn span{
+	height: 1px;
+}
+
+.nav-btn span:before,
+.nav-btn span:after{
+	height: 1px;
+	left: -4px;
+	width: 26px;
+}
+
+.nav-btn span:before{
+	bottom: 7px;
+}
+
+.nav-btn span:after{
+	top: 6px;
+}
+
+.nav-btn.type-dots span:before,
+.nav-btn.type-dots span:after{
+	left: 0;
+}
+
+.nav-btn.type-dots.active span,
+.nav-btn.type-dots.active span:before,
+.nav-btn.type-dots.active span:after{
+	height: 1px;
+}
+
+.nav-btn.type-dots.active span:after{
+	top: 0;
+}

@@ -1,0 +1,37 @@
+
+
+==Description==
+
+The <b>"gwolle_gb_get_entries_sql"</b> filter is used to edit the SQL query.
+
+You can use this filter as:
+
+<code><?php add_filter( 'gwolle_gb_get_entries_sql', 'filter_function_name' ) ?></code>
+
+Where 'filter_function_name' is the function WordPress should call when the filter is being used.
+
+'''filter_function_name''' should be a unique function name. It cannot match any other function name already declared.
+
+
+==Examples==
+
+// Set ordering to ASC.
+function my_asc_gwolle_gb_get_entries_sql( $sql, $sql_nonprepared, $values, $args ) {
+
+	global $wpdb;
+
+	if ( is_admin() ) {
+		return $sql;
+	}
+
+	$old = 'DESC';
+	$new = 'ASC';
+	$sql_nonprepared = str_replace( $old, $new, $sql_nonprepared );
+	// Always use $wpdb->prepare(), no exceptions.
+	$sql = $wpdb->prepare( $sql_nonprepared, $values );
+
+	return $sql;
+
+}
+add_filter( 'gwolle_gb_get_entries_sql', 'my_asc_gwolle_gb_get_entries_sql', 10, 4 );
+

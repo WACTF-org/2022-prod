@@ -1,0 +1,35 @@
+body {
+  background-color: black;
+  text-align: center;
+}
+
+.content {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  right: 20px;
+  padding: 20px;
+  transform: translateY(-50%);
+  resize: none;
+  overflow: auto;
+}
+
+form {
+  margin: auto;
+  margin-top: 0px;
+}
+
+.swantext {
+  font-family: monospace;
+  color: #d2f8d2;
+  white-space: pre;
+  height: 80%;
+  text-align: left;
+  width: fit-content;
+  margin: auto;
+}
+
+p {
+  color: white;
+}
+

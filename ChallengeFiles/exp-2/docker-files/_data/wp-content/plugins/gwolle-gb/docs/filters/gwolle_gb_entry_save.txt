@@ -1,0 +1,26 @@
+
+
+==Description==
+
+The <b>"gwolle_gb_entry_save"</b> filter is used to change the entry before saving it to the database.
+
+You can use this filter as:
+
+<code><?php add_filter( 'gwolle_gb_entry_save', 'filter_function_name' ) ?></code>
+
+Where 'filter_function_name' is the function WordPress should call when the filter is being used.
+
+'''filter_function_name''' should be a unique function name. It cannot match any other function name already declared.
+
+
+==Examples==
+
+
+function my_gwolle_gb_entry_save( $entry ) {
+	// $entry is an array.
+	// Example where every entry that gets saved gets the current time in GMT
+	$entry['datetime'] = time();
+	return $entry;
+}
+add_filter( 'gwolle_gb_entry_save', 'my_gwolle_gb_entry_save');
+

@@ -1,0 +1,132 @@
+/* This CSS file loads only when admin top bar is displayed on frontend */
+/*
+adminbar:
+min-width 783px height - 32px, position - fixed
+min-width 600-782px - height 46px, position - fixed
+max-width 600px - height 46px, position - absolute
+
+html
+max-width 782px - margin-top 46px
+min-width 783px - margin-top 32px
+*/
+
+/*
+because of body is relative we need to set negative top value for admin bar
+on lt 600px screens
+*/
+/* for side_nav */
+[id="wpadminbar"] {
+	margin: 0;
+}
+
+@media(max-width: 600px){
+	[id="wpadminbar"] {
+		margin-top: -46px;
+		z-index:100001 !important;
+	}
+	.top-menu-active [id="wpadminbar"] {
+		z-index: 100000 !important;
+	}
+}
+
+/*big resolutions*/
+@media screen and (min-width: 783px) {
+	/*.admin-bar .top-nav .nav-btn,*/
+	.admin-bar .top-nav #nav_toggle,
+	.admin-bar #header.affix,
+	.admin-bar #search_dropdown,
+	.admin-bar #side_nav {
+		top: 32px;
+	}
+
+	.admin-bar .read-progress-top {
+		top:32px !important;
+	}
+
+	.admin-bar #search_modal_close {
+		top: 37px;
+	}
+}
+/*mobile menu*/
+@media screen and (min-width: 601px) {
+	.admin-bar .top-nav.active #nav_toggle,
+	.admin-bar .top-nav.active {
+		top: 32px;
+	}
+
+	.admin-bar .affix.scrolltop-sticky .top-nav.active #nav_toggle,
+	.admin-bar .affix.scrolltop-sticky .top-nav.active {
+		top: 0;
+	}
+}
+/*tall fixed admin bar*/
+@media screen and (min-width: 601px) and (max-width: 782px) {
+	.admin-bar .top-nav #nav_toggle,
+	.admin-bar #header.affix,
+	.admin-bar #search_dropdown,
+	.admin-bar #side_nav {
+		top: 46px;
+	}
+	.admin-bar #search_modal_close {
+		top: 46px;
+	}
+	/*menu*/
+	.admin-bar .top-nav.active {
+		top: 46px;
+	}
+	/*
+	.admin-bar .affix .top-nav.active {
+		top: 0;
+	}
+	*/
+	.admin-bar .read-progress-top {
+		top:46px !important;
+	}
+}
+
+/*tall absolute admin bar*/
+@media (max-width: 600px) {
+
+	body.admin-bar {
+		/*
+		if following not set then admin bar on <600px will have gap 46px from top
+		 */
+		position: static !important;
+
+		/*
+		this cause disappearing admin bar on small screens because of margin on HTML element
+		overflow: hidden;
+		*/
+	}
+
+	html {
+		position: relative;
+		/*
+		this makes page scroll impossible
+		overflow: hidden;
+		*/
+	}
+	.admin-bar .top-nav,
+	.admin-bar #header {
+		z-index: 100000;
+	}
+	.admin-bar #search_modal_close,
+	.admin-bar #search_dropdown,
+	.admin-bar #side_nav,
+	.admin-bar #topline {
+		z-index: 100001;
+	}
+	.admin-bar.top-menu-active #topline,
+	.admin-bar.side-menu-active #topline {
+		z-index: 9999;
+	}
+
+}
+/*close button after mobile menu*/
+#menu-main-menu+#nav_close{
+	top: 0;
+}
+/*corner preloader*/
+.admin-bar .preloader.corner {
+	top:46px;
+}

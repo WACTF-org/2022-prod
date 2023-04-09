@@ -1,0 +1,34 @@
+
+
+==Description==
+
+The <b>"gwolle_gb_save_entry_admin"</b> action is used to execute a function when an entry is entered in the admin and it was saved.
+
+You can use this action as:
+
+<code><?php add_action( 'gwolle_gb_save_entry_admin', 'action_function_name' ) ?></code>
+
+Where 'action_function_name' is the function WordPress should call when the action is being used.
+
+'''action_function_name''' should be a unique function name. It cannot match any other function name already declared.
+
+
+==Examples==
+
+function my_gwolle_gb_save_entry_admin( $entry ) {
+	// $entry is an object.
+
+	$book_id = (int) $entry->get_book_id();
+	if ( $book_id == 0 ) {
+			$book_id = 1;
+	}
+	$post_id = gwolle_gb_get_postid( $book_id );
+	if ( $post_id ) {
+			// this redirect doesn't work, since the headers were already sent.
+			wp_redirect( gwolle_gb_get_permalink( $post_id ) );
+			exit;
+	}
+
+
+}
+add_action( 'gwolle_gb_save_entry_admin', 'my_gwolle_gb_save_entry_admin' );

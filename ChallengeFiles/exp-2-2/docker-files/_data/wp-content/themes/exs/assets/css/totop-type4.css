@@ -1,0 +1,8 @@
+/*to top button type 4*/
+#to-top{
+	background-color: var(--colorMain);
+}
+
+#to-top:before{
+	border-color: #fff;
+}

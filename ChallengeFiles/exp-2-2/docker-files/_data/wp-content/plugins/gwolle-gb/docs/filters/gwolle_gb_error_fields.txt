@@ -1,0 +1,25 @@
+
+
+==Description==
+
+The <b>"gwolle_gb_error_fields"</b> filter is used to edit the form fields that generated an error frontend after submitting the form.
+
+You can use this filter as:
+
+<code><?php add_filter( 'gwolle_gb_error_fields', 'filter_function_name' ) ?></code>
+
+Where 'filter_function_name' is the function WordPress should call when the filter is being used.
+
+'''filter_function_name''' should be a unique function name. It cannot match any other function name already declared.
+
+
+==Examples==
+
+
+function my_gwolle_gb_error_fields( $error_fields ) {
+	// $error_fields is an array
+	$error_fields[] = 'Custom Field';
+	return $error_fields;
+}
+add_filter( 'gwolle_gb_error_fields', 'my_gwolle_gb_error_fields', 10, 1 );
+

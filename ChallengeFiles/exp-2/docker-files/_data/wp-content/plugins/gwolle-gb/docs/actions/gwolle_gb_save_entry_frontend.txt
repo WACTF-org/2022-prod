@@ -1,0 +1,47 @@
+
+
+==Description==
+
+The <b>"gwolle_gb_save_entry_frontend"</b> action is used to execute a function when an entry is entered in the frontend and it was saved.
+
+You can use this action as:
+
+<code><?php add_action( 'gwolle_gb_save_entry_frontend', 'action_function_name' ) ?></code>
+
+Where 'action_function_name' is the function WordPress should call when the action is being used.
+
+'''action_function_name''' should be a unique function name. It cannot match any other function name already declared.
+
+
+==Examples==
+
+/*
+ * Redirect after saving an entry on the frontend.
+ * Please be aware that you will not see messages on the form and this redirect only works if AJAX is disabled.
+ */
+function my_redirect_gwolle_gb_save_entry_frontend( $entry ) {
+	// $entry is an object.
+
+	// redirect moderator to the Editor.
+	if ( current_user_can( 'moderate_comments' ) ) {
+			wp_redirect( admin_url('admin.php?page=' . GWOLLE_GB_FOLDER . '/editor.php&entry_id=' . $entry->get_id() ) );
+			exit;
+	}
+
+}
+add_action( 'gwolle_gb_save_entry_frontend', 'my_redirect_gwolle_gb_save_entry_frontend' );
+
+
+/*
+ * Change the content of the saved message.
+ */
+function my_quotes_gwolle_gb_save_entry_frontend( $entry ) {
+	// $entry is an object.
+
+	$entry_content = $entry->get_content();
+	$entry_content = '" ' . $entry_content . ' "';
+	$entry->set_content( $entry_content );
+	$entry->save();
+
+}
+add_action( 'gwolle_gb_save_entry_frontend', 'my_quotes_gwolle_gb_save_entry_frontend' );

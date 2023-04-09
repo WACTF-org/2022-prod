@@ -1,0 +1,23 @@
+
+
+==Description==
+
+The <b>"gwolle_gb_uninstall"</b> action is used to execute a function when the plugin is uninstalled and deactivated.
+
+You can use this action as:
+
+<code><?php add_action( 'gwolle_gb_uninstall', 'action_function_name' ) ?></code>
+
+Where 'action_function_name' is the function WordPress should call when the action is being used.
+
+'''action_function_name''' should be a unique function name. It cannot match any other function name already declared.
+
+
+==Examples==
+
+function my_gwolle_gb_uninstall( $args = '' ) {
+
+	// Do something
+
+}
+add_action( 'gwolle_gb_uninstall', 'my_gwolle_gb_uninstall' );

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Graph Memes</title>
+    <script type="text/javascript" src="https://youtube.com/iframe_api"></script>
+</head>
+<style>
+    body {
+        background-image: url("./graph_meme.png");
+        background-repeat: repeat;
+    }
+
+    .centre {
+        position: absolute;
+        margin: auto;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+    }
+</style>
+
+<body>
+    <script type="text/javascript">
+        var player;
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('ytplayer', {
+                height: '500vh',
+                width: '888vh',
+                playerVars: {
+                    autoplay: 1,
+                    loop: 1,
+                    cc_load_policy: 1,
+                    controls: 0,
+                    showinfo: 0,
+                    playlist: 'sIlNIVXpIns'
+                },
+                videoId: 'sIlNIVXpIns',
+            });
+        }
+        console.log("This web server is running a GraphQL API server")
+    </script>
+    <div id="ytplayer" class="centre"></div>
+
+    <!-- // <iframe width="888vh" height="500vh"
+        src="https://www.youtube.com/embed/sIlNIVXpIns?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&version=3"
+        title="Look at this graph" // frameborder="0" //
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" //
+        allowfullscreen></iframe> -->
+</body>
+
+</html>

@@ -1,0 +1,20 @@
+#nav_top.top-nav{
+	width: 100%;
+	right: 0;
+	left: 0;
+	-webkit-transform: scaleX(0);
+	transform: scaleX(0);
+	transition: -webkit-transform .2s ease;
+	transition: transform .2s ease;
+	transition: transform .2s ease, -webkit-transform .2s ease;
+}
+
+#nav_top.top-nav.active{
+	-webkit-transform: scaleX(1);
+	transform: scaleX(1);
+}
+
+#nav_top.top-nav .top-menu{
+	max-width: var(--mobileNavWidth);
+	margin: auto;
+}

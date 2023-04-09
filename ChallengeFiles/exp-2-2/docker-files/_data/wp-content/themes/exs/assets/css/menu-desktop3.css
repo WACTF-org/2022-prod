@@ -1,0 +1,5 @@
+.top-menu > li > a:before{
+	opacity: .2;
+	height: .55em;
+	bottom: .45em;
+}

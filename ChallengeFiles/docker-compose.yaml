@@ -1,0 +1,399 @@
+#limits.cpus            4.0
+#limits.memory          3700
+
+#reservations.cpus      1.65
+#reservations.memory    1700
+version: '3.8'
+services:
+  # web-chals
+  web-0:
+    container_name: web-0
+    hostname: web-0
+    build: ./web-0/
+    image: registry.capture.tf/wactf0x05/web-0
+    ports:
+      - 80:80
+    deploy:
+      resources:
+        limits:
+          cpus: '0.05'
+          memory: 100M
+        reservations:
+          cpus: '0.05'
+          memory: 20M
+    cap_drop:
+      - ALL
+    
+  web-1:
+    container_name: web-1
+    build: ./web-1/
+    image: registry.capture.tf/wactf0x05/web-1
+    ports:
+      - 80:4000 
+    deploy:
+      resources:
+        limits:
+          cpus: '0.10'
+          memory: 100M
+        reservations:
+          cpus: '0.05'
+          memory: 40M
+    cap_drop:
+      - NET_RAW
+
+  web-2:
+    container_name: web-2
+    build: ./web-2/
+    image: registry.capture.tf/wactf0x05/web-2
+    ports:
+      - 9090:9090
+    deploy:
+      resources:
+        limits:
+          cpus: '0.10'
+          memory: 100M
+        reservations:
+          cpus: '0.05'
+          memory: 15M
+    cap_drop:
+      - NET_RAW
+
+  # web-2-1:
+  #   container_name: web-2-1
+  #   build: ./web-2-1/
+  #   image: registry.capture.tf/wactf0x05/web-2-1
+  #   ports:
+  #     - 80:80
+  #   deploy:
+  #     resources:
+  #       limits:
+  #         cpus: "0.25"
+  #         memory: 450M
+  #       reservations:
+  #         cpus: "0.10"
+  #         memory: 250M
+  #   cap_drop:
+  #     - NET_RAW
+
+  web-3:
+    container_name: web-3
+    build: ./web-3
+    image: registry.capture.tf/wactf0x05/web-3
+    ports:
+        - 80:80
+    deploy:
+      resources:
+        limits:
+          cpus: '0.15'
+          memory: 200M
+        reservations:
+          cpus: '0.10'
+          memory: 150M
+    cap_drop:
+        - NET_RAW
+
+  web-3-2:
+    container_name: web-3-2
+    build: ./web-3-2/
+    image: registry.capture.tf/wactf0x05/web-3-2
+    ports:
+      - 80:80
+    deploy:
+      resources:
+        limits:
+          cpus: "0.15"
+          memory: 150M
+        reservations:
+          cpus: "0.10"
+          memory: 110M
+    cap_drop:
+      - NET_RAW
+
+  web-3-3:
+    container_name: web-3-3
+    build: ./web-3-3/
+    image: registry.capture.tf/wactf0x05/web-3-3
+    ports:
+      - 80:8080
+    deploy:
+      resources:
+        limits:
+          cpus: "0.10"
+          memory: 100M
+        reservations:
+          cpus: "0.05"
+          memory: 40M
+    cap_drop:
+      - NET_RAW
+
+  web-4:
+    container_name: web-4
+    build: ./web-4/
+    image: registry.capture.tf/wactf0x05/web-4
+    ports:
+      - 80:8080
+    deploy:
+      resources:
+        limits:
+          cpus: "0.25"
+          memory: 250M
+        reservations:
+          cpus: "0.10"
+          memory: 200M
+    cap_drop:
+      - NET_RAW
+
+  web-4-2:
+    container_name: web-4-2
+    hostname: web-4-2
+    build: ./web-4-2/
+    image: registry.capture.tf/wactf0x05/web-4-2
+    ports:
+      - 80:80
+    deploy:
+      resources:
+        limits:
+          cpus: '0.10'
+          memory: 100M
+        reservations:
+          cpus: '0.05'
+          memory: 30M
+    cap_drop:
+      - ALL
+    cap_add:
+      - CHOWN
+      - DAC_OVERRIDE
+      - SETGID
+      - SETUID
+
+  # crypto chals
+  crypto-1:
+    container_name: crypto-1
+    build: ./crypto-1/
+    image: registry.capture.tf/wactf0x05/crypto-1
+    ports:
+      - 8000:8000
+    deploy:
+      resources:
+        limits:
+          cpus: '0.05'
+          memory: 100M
+        reservations:
+          cpus: '0.05'
+          memory: 30M
+    cap_drop:
+      - NET_RAW
+  
+  crypto-2:
+    container_name: crypto-2
+    build: ./crypto-2/
+    image: registry.capture.tf/wactf0x05/crypto-2
+    ports:
+      - 8888:8888
+      - 9999:9999
+    deploy:
+      resources:
+        limits:
+          cpus: '0.05'
+          memory: 100M
+        reservations:
+          cpus: '0.05'
+          memory: 20M
+    cap_drop:
+      - NET_RAW
+
+  # exploit chals
+  exp-0:
+    build: ./exp-0/
+    container_name: exp-0
+    hostname: exp-0
+    image: registry.capture.tf/wactf0x05/exp-0
+    ports:
+      - "22123:22"
+    cap_drop:
+      - ALL
+    cap_add:
+      - CHOWN
+      - FOWNER
+      - KILL
+      - SETGID
+      - SETUID
+      - NET_BIND_SERVICE
+      - SYS_CHROOT
+    deploy:
+      resources:
+        limits:
+          cpus: '0.05'
+          memory: 100M
+        reservations:
+          cpus: '0.05'
+          memory: 50M
+
+  exp-1:
+    build: ./exp-1/
+    container_name: exp-1
+    hostname: exp-1
+    image: registry.capture.tf/wactf0x05/exp-1
+    ports:
+      - "1337:1337"
+    cap_drop:
+      - ALL
+    deploy:
+      resources:
+        limits:
+          cpus: '0.05'
+          memory: 100M
+        reservations:
+          cpus: '0.05'
+          memory: 20M
+
+  exp-2:
+    build: ./exp-2/
+    container_name: exp-2
+    hostname: exp-2
+    image: registry.capture.tf/wactf0x05/exp-2
+    environment:
+      - WORDPRESS_DB_HOST=exp-2-db
+      - WORDPRESS_DB_USER=wp_lowpriv
+      - WORDPRESS_DB_PASSWORD=eyxIKyYRK7h2c5Gulrhn
+      - WORDPRESS_DB_NAME=wordpress
+    ports:
+      - 80:80
+    deploy:
+      resources:
+        limits:
+          cpus: '1.0' # wowee
+          memory: 550M
+        reservations:
+          cpus: '0.20'
+          memory: 250M
+    cap_drop:
+      - ALL
+
+  exp-2-2:
+    build: ./exp-2-2/
+    container_name: exp-2-2
+    hostname: exp-2-2
+    image: registry.capture.tf/wactf0x05/exp-2-2
+    environment:
+      - WORDPRESS_DB_HOST=exp-2-db
+      - WORDPRESS_DB_USER=wp_lowpriv_exp2
+      - WORDPRESS_DB_PASSWORD=3tQ0YEnKzJd6Uvly9bAJ
+      - WORDPRESS_DB_NAME=wordpress-exp-2-2
+    ports:
+      - 80:80
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50' # 30%
+          memory: 500M # 132mb
+        reservations:
+          cpus: '0.20'
+          memory: 250M
+    cap_drop:
+      - ALL
+
+  exp-2-db:
+    build: ./exp-2-db/
+    container_name: exp-2-db
+    hostname: exp-2-db
+    image: registry.capture.tf/wactf0x05/exp-2-db
+    environment:
+      - MYSQL_ROOT_PASSWORD=BBS0JfGL1nZ7r
+    ports:
+      - 3306:3306
+    deploy:
+      resources:
+        limits:
+          cpus: '0.20' # 15%
+          memory: 200M # 60mb
+        reservations:
+          cpus: '0.15'
+          memory: 100M
+    cap_drop:
+      - NET_RAW
+
+  exp-3:
+    container_name: exp-3
+    build: ./exp-3/
+    image: registry.capture.tf/wactf0x05/exp-3
+    ports:
+      - 8001:8001
+    deploy:
+      resources:
+        limits:
+          cpus: '0.05'
+          memory: 100M
+        reservations:
+          cpus: '0.05'
+          memory: 50M
+    cap_drop:
+      - NET_RAW
+  
+  exp-3-1:
+    container_name: exp-3-1
+    build: ./exp-3-1/
+    image: registry.capture.tf/wactf0x05/exp-3-1
+    ports:
+      - "1342:1337"
+    deploy:
+      resources:
+        limits:
+          cpus: "0.30"
+          memory: 100M
+        reservations:
+          cpus: "0.05"
+          memory: 20M
+    cap_drop:
+      - NET_RAW
+
+  exp-3-2:
+    container_name: exp-3-2
+    build: ./exp-3-2/
+    image: registry.capture.tf/wactf0x05/exp-3-2
+    ports:
+      - "1343:1337"
+    deploy:
+      resources:
+        limits:
+          cpus: "0.30"
+          memory: 100M
+        reservations:
+          cpus: "0.05"
+          memory: 30M
+    cap_drop:
+      - NET_RAW
+
+  # shellbox
+  shellbox: # naming here is important
+    build: shellbox
+    container_name: shellbox
+    hostname: shellbox
+    image: registry.capture.tf/wactf0x05/shellbox
+    ports:
+      - "22:22"
+      - "1389:1389"
+      - "2222:2222"
+      - "3333:3333"
+      - "4444:4444"
+      - "8000:8000"
+      - "8080:8080"
+      - "10000:10000"
+    cap_drop:
+      - ALL
+    cap_add:
+      - CHOWN
+      - FOWNER
+      - KILL
+      - SETGID
+      - SETUID
+      - NET_BIND_SERVICE
+      - SYS_CHROOT
+    deploy:
+      resources:
+        limits:
+          cpus: '0.20'
+          memory: 200M # 60mb OOMd with sqlmap running in tmux
+        reservations:
+          cpus: '0.10'
+          memory: 25M # 0: 16.82MiB / 1: 18.58MiB / 4: 23.04MiB

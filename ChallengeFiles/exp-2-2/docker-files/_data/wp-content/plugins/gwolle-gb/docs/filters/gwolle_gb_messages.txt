@@ -1,0 +1,25 @@
+
+
+==Description==
+
+The <b>"gwolle_gb_messages"</b> filter is used to edit the messages that are shown on the frontend after submitting the form.
+
+You can use this filter as:
+
+<code><?php add_filter( 'gwolle_gb_messages', 'filter_function_name' ) ?></code>
+
+Where 'filter_function_name' is the function WordPress should call when the filter is being used.
+
+'''filter_function_name''' should be a unique function name. It cannot match any other function name already declared.
+
+
+==Examples==
+
+
+function my_gwolle_gb_messages( $messages ) {
+	// $messages is an array
+	$messages[] = 'Custom Message';
+	return $messages;
+}
+add_filter( 'gwolle_gb_messages', 'my_gwolle_gb_messages', 10, 1 );
+

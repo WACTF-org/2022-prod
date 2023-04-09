@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>GZIP64 - Help Center</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.0/css/bootstrap.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <style>
+            .bd-placeholder-img {
+                font-size: 1.125rem;
+                text-anchor: middle;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                user-select: none;
+            }
+
+            @media (min-width: 768px) {
+                .bd-placeholder-img-lg {
+                    font-size: 3.5rem;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container py-3">
+            <header>
+                <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
+                    <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
+                        <span class="fs-4">GZIP64 API - Help Center</span>
+                    </a>
+                    <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+                        <a class="me-3 py-2 text-dark text-decoration-none" href="#">Support</a>
+                        <a class="me-3 py-2 text-dark text-decoration-none" href="#">Logout</a>
+                    </nav>
+                </div>
+
+                <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+                    <h1 class="display-4 fw-normal">Help Center</h1>
+                    <hr/>
+                    <p class="fs-5 text-muted">Message Log<br /></p>
+                </div>
+                <div>
+                    <ul>
+                        <% for (var m in messages) { %>
+                            <div>
+                                <p>Message: <%- messages[m].message %></p>
+                                <p>Timestamp: <%- messages[m].timestamp %></p>
+                            </div>
+                        <hr/>
+                        <% } %>
+                    </ul>
+                </div>
+            </header>
+            <hr />
+            <br />
+        </div>
+        <script src="/public/cdn/jquery.min.js" integrity="sha256-ExwNgpZ/7QXhkg5Rng6m7JGrl7fEBID3L4r4aAu6Hwo="></script></script>
+        <script src="/public/cdn/bootstrap.min.js" integrity="sha256-DOneOY3n5+xj6Da3AJBkPHxaPynqSlGaZ9790gbBOsE="></script></script>
+        <script src="/public/cdn/melonjs.min.js" integrity="sha256-jQSAUrfn72DS8Mj47Mg2K8X21PJDwDC2ogv1H4UH4mU="></script></script>
+    </body>
+</html>

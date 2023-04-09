@@ -1,0 +1,27 @@
+
+
+==Description==
+
+The <b>"gwolle_gb_entries_read"</b> filter is used to edit the output for all entry at the frontend.
+
+You can use this filter as:
+
+<code><?php add_filter( 'gwolle_gb_entries_read', 'filter_function_name' ) ?></code>
+
+Where 'filter_function_name' is the function WordPress should call when the filter is being used.
+
+'''filter_function_name''' should be a unique function name. It cannot match any other function name already declared.
+
+
+==Examples==
+
+
+function my_gwolle_gb_entries_read( $entries_html ) {
+	// $entries_html is a string
+	$old = 'Old String';
+	$new = 'New String';
+	$entries_html = str_replace( $old, $new, $entries_html );
+	return $entries_html;
+}
+add_filter( 'gwolle_gb_entries_read', 'my_gwolle_gb_entries_read', 10, 1 );
+

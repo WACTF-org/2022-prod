@@ -1,0 +1,24 @@
+
+
+==Description==
+
+The <b>"gwolle_gb_delete_entry"</b> filter is used to hook a function after an entry is deleted from the database.
+
+You can use this filter as:
+
+<code><?php add_filter( 'gwolle_gb_delete_entry', 'filter_function_name' ) ?></code>
+
+Where 'filter_function_name' is the function WordPress should call when the filter is being used.
+
+'''filter_function_name''' should be a unique function name. It cannot match any other function name already declared.
+
+
+==Examples==
+
+
+function my_gwolle_gb_delete_entry( $entry_id ) {
+	// Do something
+	do_it();
+}
+add_action( 'gwolle_gb_delete_entry', 'my_gwolle_gb_delete_entry');
+
