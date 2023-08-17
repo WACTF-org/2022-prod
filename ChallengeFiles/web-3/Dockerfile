@@ -7,8 +7,6 @@ WORKDIR /swansay
 
 RUN apk add build-base
 
-USER rails
-
 RUN gem install bundler:2.3.5
 RUN bundle install
 
